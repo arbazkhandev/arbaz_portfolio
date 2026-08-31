@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{
+  dark: localStorage.getItem('theme') === 'dark',
+  scrolled: false,
+  mobileMenu: false,
+  progress: 0,
+  activeProjId: new URLSearchParams(window.location.search).get('project') || 'movins',
+  activeGalleryImg: 0,
+  allProjectSlugs: [
+    { id: 'movins', name: 'Movins Delivery App', tag: 'Mobile & GPS' },
+    { id: 'cars-and-vans-uk', name: 'Cars & Vans UK', tag: 'Automotive & CRM' },
+    { id: 'daily-insi', name: 'Daily Insi', tag: 'Digital CMS' },
+    { id: 'laptop-harbor', name: 'Laptop Harbor', tag: 'E-Commerce ERP' },
+    { id: 'any2convert', name: 'Any2Convert', tag: 'Tools & OCR' },
+    { id: 'food-for-nought', name: 'Food For Nought', tag: 'Charity NGO' }
+  ],
+  projectsData: {
+    'movins': {
+      title: 'Movins — Courier & On-Demand Delivery Mobile App',
+      badge: 'Mobile App & Logistics',
+      category: 'Mobile & Apps',
+      tags: ['Cross-Platform Mobile', 'Courier Logistics', 'Live GPS Tracking', 'REST API', 'Real-Time Sync'],
+      dateRange: '2024 · 10 weeks',
+      tagline: 'An on-demand courier and parcel delivery mobile application featuring sub-10 second proximity driver dispatch, real-time GPS parcel tracking, and end-to-end booking workflows.',
+      client: 'Movins Logistics App',
+      industry: 'Logistics & Transportation',
+      location: 'United Kingdom',
+      role: 'Lead Mobile Developer & Backend Architect',
+      timeline: '2024 (10 Weeks)',
+      deliverables: 'Cross-Platform Mobile App, Driver Dispatch Engine, Live Tracking API, Digital Proof of Delivery',
+      stack: ['Flutter / React Native', 'Node / PHP Backend', 'MySQL & Redis', 'Google Maps API', 'WebSockets', 'Push Notifications'],
+      heroImg: 'picture/movins.png',
+      gallery: [
+        'picture/movins.png'
+      ],
+      stats: [
+        { val: '<10s', label: 'Driver dispatch latency', sub: 'Instant nearby matching' },
+        { val: '99.8%', label: 'GPS tracking uptime', highlight: true, sub: 'Real-time telemetry' },
+        { val: '4.8 / 5', label: 'Driver & user rating', sub: 'High user satisfaction' },
+        { val: 'Zero', label: 'Lost package incidents', sub: 'Digital proof of delivery' }
+      ],
+      overview: 'Movins is a dynamic courier and package delivery mobile platform designed to connect shippers and businesses with verified courier drivers for fast, on-demand parcel dispatch, real-time vehicle tracking, and automated proof of delivery.',
+      challenge: 'Managing simultaneous high-frequency GPS coordinate streams from hundreds of drivers without draining phone batteries or overwhelming the API server, while providing customers with a silky-smooth, live-moving vehicle pin on their screen.',
+      solutionHeading: 'Real-Time Driver Dispatch Engine & Battery-Optimized GPS Telemetry',
+      solution: 'I architected a high-throughput mobile application with an asynchronous backend queue. Courier location updates are batched and broadcast via lightweight WebSockets. The dispatch algorithm calculates radial distances to notify the nearest drivers instantly, while the client app provides interactive map navigation with turn-by-turn route tracking.',
+      keyPoints: [
+        { title: 'Interactive Live Map & Real-Time Tracking', desc: 'Smooth GPS pin interpolation showing driver movement, remaining travel distance, and precise estimated arrival time (ETA).' },
+        { title: 'Smart Proximity Driver Dispatch Engine', desc: 'Radial geofencing algorithm that routes incoming deliveries to the closest verified drivers, slashing wait times to under 10 seconds.' },
+        { title: '3-Step Streamlined Booking Workflow', desc: 'Frictionless customer booking flow with automated instant pricing calculations based on package dimensions, weight, and travel distance.' },
+        { title: 'Digital Proof of Delivery (e-POD)', desc: 'In-app recipient signature capture, photo upload on drop-off, and automated digital PDF receipt generation.' },
+        { title: 'Automated Push Notifications', desc: 'Real-time milestone notifications at every stage: Driver Assigned, Parcel Picked Up, Approaching Destination, and Delivered.' }
+      ],
+      outcome: 'The platform successfully launched with rave reviews from both drivers and shippers. Dispatch response latency was cut to under 10 seconds, with 99.8% GPS sync stability and zero package reconciliation errors.'
+    },
+    'cars-and-vans-uk': {
+      title: 'Cars and Vans UK — Dealership CRM & Automotive Showcase',
+      badge: 'UK Dealership CRM & Platform',
+      category: 'Automotive & CRM',
+      tags: ['Dealership CRM', 'Sales Pipeline', 'HP/PCP Finance Engine', 'Digital Signatures', 'Vehicle Master DB'],
+      dateRange: '2024 · 8 weeks',
+      tagline: 'Comprehensive UK Dealership CRM and vehicle showcase platform featuring visual sales pipeline, multi-scheme finance calculators (HP, PCP, Lease), e-signatures, document vault, and automated invoicing.',
+      client: 'Cars and Vans UK',
+      industry: 'Automotive Dealership & Finance',
+      location: 'United Kingdom',
+      role: 'Lead CRM Architect & Full-Stack Engineer',
+      timeline: '2024 (8 Weeks)',
+      deliverables: 'Visual Dealership CRM, Multi-Scheme Finance Engine, Digital Signature Portal, Vehicle Master Database, PDF Invoicing System',
+      stack: ['PHP (Laravel / MVC)', 'MySQL Normalized DB', 'Tailwind CSS', 'Alpine.js', 'DOMPDF', 'Digital Signature Engine', 'SMS/Email Webhooks'],
+      heroImg: 'picture/cvextras/ladning_vehicle_for_sale_white.png',
+      gallery: [
+        'picture/cvextras/ladning_vehicle_for_sale_white.png',
+        'picture/cvextras/landing_hero_why_us_white.png',
+        'picture/cvextras/landing_vehicle_image_scope_white.png',
+        'picture/cvextras/landing_vehicle_finance_white.png',
+        'picture/cvextras/landing_reviews_white.png',
+        'picture/cvextras/landing_lcoation_white.png'
+      ],
+      stats: [
+        { val: '+65%', label: 'Lead capture conversion', highlight: true, sub: 'Optimized inquiry funnel' },
+        { val: '−50%', label: 'Inquiry response latency', sub: 'Instant dealer alerts' },
+        { val: '100%', label: 'Live stock sync accuracy', sub: 'Zero duplicate listings' },
+        { val: '4.9 / 5', label: 'Dealer staff satisfaction', sub: 'Intuitive back-office UI' }
+      ],
+      overview: 'Cars and Vans UK is a UK-based automotive dealership. I designed and engineered a custom back-office Dealership CRM paired with a front-end vehicle showcase to completely streamline lead pipelines, stock management, FCA-compliant finance calculations, and legally binding digital signatures.',
+      challenge: 'Automotive sales involve complex multi-tiered financing options (HP, PCP, Lease), stringent FCA compliance requirements, and high lead drop-offs when paperwork is handled manually across disparate spreadsheets.',
+      solutionHeading: 'Integrated Dealership CRM Architecture & Finance Calculation Engine',
+      solution: 'I built a comprehensive CRM encompassing visual Kanban pipelines, automated lender-tier APR calculators, paperless digital signature portals, and an automated PDF document generator for sales orders and invoices.',
+      keyPoints: [
+        { title: '1. Lead & Pipeline Management', desc: 'Visual Sales Pipeline across clear stages (New, In Progress, Subject to Finance, Sold, Lost), task/calendar follow-up scheduling, and centralized customer profiles.' },
+        { title: '2. Vehicle Inventory Hub (Stock Management)', desc: 'Full CRUD control over vehicle stock (Make, Model, Reg, Specs, Pricing), automated stock ageing reports (Healthy to Urgent), and real-time cash/VAT/finance price engine.' },
+        { title: '3. Finance & Compliance Engine', desc: 'Real-time calculation of monthly payments, total payable, interest, and balloon values for HP, PCP, and Lease deals with FCA-compliant lender tiers, APR ranges, and excess mileage validation.' },
+        { title: '4. End-to-End Digital Signatures', desc: 'One-click signature dispatch for Sales Orders and Finance Agreements, mobile-responsive signing portal, and automated status synchronization (Draft → Sent → Signed).' },
+        { title: '5. Compliance & Document Management', desc: 'Centralized digital vault for driver’s licenses and signed agreements, automated MOT/tax expiry tracking, and timestamped IP-logged audit trails.' },
+        { title: '6. Quotations, Invoicing & Role Control', desc: 'Instant automated PDF generation and emailing of professional Quotations and Sales Invoices, backed by a role-based self-service staff portal.' }
+      ],
+      outcome: 'The CRM transformed dealership operations: sales reps closed deals 50% faster, finance paperwork became 100% paperless, and overall online lead conversions rose by 65% in the first quarter.'
+    },
+    'daily-insi': {
+      title: 'Daily Insi — Digital Media & Editorial Publishing Platform',
+      badge: 'Media & Publishing',
+      category: 'Digital Publishing',
+      tags: ['Editorial CMS', 'Digital News', 'Core Web Vitals', 'Schema.org SEO', 'High Speed'],
+      dateRange: '2024 · 6 weeks',
+      tagline: 'High-speed digital publication and insights platform built for instant article publishing, reader engagement, dynamic category taxonomies, and 98+ Google PageSpeed scores.',
+      client: 'Daily Insi Editorial Group',
+      industry: 'Digital Publishing & News',
+      location: 'Global / Remote',
+      role: 'Full-Stack CMS Developer & SEO Specialist',
+      timeline: '2024 (6 Weeks)',
+      deliverables: 'Editorial CMS Dashboard, Lightweight Reader Frontend, Structured Data Schema, Caching Engine',
+      stack: ['PHP / Laravel', 'Tailwind CSS', 'MySQL', 'Schema.org JSON-LD', 'WebP Optimizer', 'OpenGraph Meta Engine'],
+      heroImg: 'picture/cvextras/dailyisni.png',
+      gallery: [
+        'picture/cvextras/dailyisni.png'
+      ],
+      stats: [
+        { val: '98 / 100', label: 'Google PageSpeed score', highlight: true, sub: 'Mobile & Desktop' },
+        { val: '<1.2s', label: 'Largest contentful paint', sub: 'Sub-second rendering' },
+        { val: '+85%', label: 'Organic search impressions', sub: 'Google Discover boost' },
+        { val: '100%', label: 'Valid Schema.org markup', sub: 'Zero structured errors' }
+      ],
+      overview: 'Daily Insi is a digital media platform publishing analysis and breaking insights across technology, business, and current events to thousands of readers every day.',
+      challenge: 'Handling sudden traffic surges without performance degradation, giving non-technical journalists an easy WYSIWYG publishing tool, and achieving top-tier Google Core Web Vitals to rank on Google News and Search.',
+      solutionHeading: 'Lightweight Server-Rendered Engine & Automated SEO Injection',
+      solution: 'I built a streamlined editorial platform that prerenders pages into clean semantic HTML5. The backend automatically processes and resizes uploaded imagery into WebP format, injects Schema.org NewsArticle JSON-LD tags, and configures smart browser caching headers.',
+      keyPoints: [
+        { title: 'Distraction-Free Editorial CMS', desc: 'Clean authoring dashboard with Markdown/WYSIWYG support, featured image focal points, and scheduled publishing.' },
+        { title: 'Green Core Web Vitals (98/100)', desc: 'Zero layout shifts (CLS < 0.01) and instant First Contentful Paint (<0.8s) for maximum reader retention.' },
+        { title: 'Automated Schema.org JSON-LD', desc: 'Dynamic structured data tags ensuring every article qualifies for Google Top Stories and Rich Snippets.' },
+        { title: 'Dynamic Topic Taxonomies', desc: 'Deep hierarchical categorization and tag indexing that keep related content interconnected.' }
+      ],
+      outcome: 'Daily Insi achieved a 98/100 PageSpeed score, driving an 85% growth in organic Google search impressions within 90 days of release.'
+    },
+    'laptop-harbor': {
+      title: 'Laptop Harbor — E-Commerce Laptop Selling App',
+      badge: 'E-Commerce App & Admin Panel',
+      category: 'E-Commerce & Retail',
+      tags: ['Laptop Selling App', 'Admin CRUD Panel', 'User Cart & Checkout', 'Auth & Password Reset', 'Inventory Management'],
+      dateRange: '2024 · 8 weeks',
+      tagline: 'Full-featured e-commerce laptop selling web application with full admin CRUD control, user shopping cart/checkout, secure authentication with forgot-password recovery, and efficient inventory management.',
+      client: 'Laptop Harbor Retail',
+      industry: 'Consumer Electronics & E-Commerce',
+      location: 'Regional Retail',
+      role: 'Full-Stack E-Commerce Developer',
+      timeline: '2024 (8 Weeks)',
+      deliverables: 'Full Admin Panel (CRUD), Customer Storefront, Shopping Cart & Checkout, Secure Authentication & Password Reset, Inventory Sync',
+      stack: ['PHP (Laravel / MVC)', 'MySQL Normalized DB', 'Tailwind CSS', 'Alpine.js', 'Session & Token Auth', 'DOMPDF'],
+      heroImg: 'picture/laptop harbor/thumbnail.jpg',
+      gallery: [
+        'picture/laptop harbor/thumbnail.jpg',
+        'picture/laptop harbor/products listing.png',
+        'picture/laptop harbor/admin_full.png',
+        'picture/laptop harbor/full_pic.png'
+      ],
+      stats: [
+        { val: '100%', label: 'Inventory sync accuracy', sub: 'Zero overselling' },
+        { val: '−60%', label: 'Order fulfillment time', highlight: true, sub: 'Automated workflow' },
+        { val: '<250ms', label: 'Catalog search speed', sub: 'Optimized SQL indices' },
+        { val: '100%', label: 'Secure authentication', sub: 'Password reset & sessions' }
+      ],
+      overview: 'This e-commerce app features a full admin panel to add, update, and delete products, and a user panel with product browsing, cart, and checkout. It includes forgot password functionality, secure authentication, and a smooth, responsive interface for seamless shopping and efficient inventory management.',
+      challenge: 'Creating a seamless shopping experience where customers can quickly filter laptops by specifications, securely manage their accounts, and checkout, while giving administrative staff an intuitive CRUD interface to manage stock, pricing, and variants effortlessly.',
+      solutionHeading: 'Robust E-Commerce Architecture with Dual Admin & Customer Portals',
+      solution: 'I developed a modular web application with dual access layers: a public storefront featuring real-time cart state management and checkout, and a secure back-office admin dashboard providing full CRUD control over the entire laptop product catalog and inventory counts.',
+      keyPoints: [
+        { title: 'Full Admin Control Panel (CRUD)', desc: 'Complete administrative capability to add, update, delete, and manage laptop products, specifications, images, and prices in real-time.' },
+        { title: 'User Shopping & Catalog Browsing', desc: 'Smooth, responsive user interface with dynamic catalog browsing, specification filtering, real-time shopping cart, and frictionless checkout.' },
+        { title: 'Secure Authentication & Password Recovery', desc: 'Protected user registration, login, and robust forgot password reset functionality with encrypted token verification.' },
+        { title: 'Automated Inventory & Stock Tracking', desc: 'Real-time stock decrementing upon successful order completion to prevent overselling and maintain accurate warehouse balances.' }
+      ],
+      outcome: 'Laptop Harbor launched as a modern, reliable e-commerce selling platform with streamlined order processing, effortless product management for administrators, and an intuitive shopping journey for buyers.'
+    },
+    'any2convert': {
+      title: 'Any2Convert — Multi-Format Online Conversion Suite',
+      badge: 'Tools & Utilities',
+      category: 'Web Utilities & Automation',
+      tags: ['Online File Converter', 'OCR Text Pipeline', 'Asynchronous Queues', 'AJAX Workers', 'File Shredding'],
+      dateRange: '2023 · 8 weeks',
+      tagline: 'Web-based online conversion platform supporting multi-format document and media transformations, OCR text processing, and asynchronous task execution without server latency.',
+      client: 'Any2Convert Web Utilities',
+      industry: 'Online Utilities & SaaS',
+      location: 'Global Web',
+      role: 'Web Application Developer & Automation Engineer',
+      timeline: '2023–2024',
+      deliverables: 'Multi-Format Transformation Engine, Tesseract OCR Pipeline, Background Queue Workers, Ephemeral Storage Cleaner',
+      stack: ['PHP Core / CLI', 'Tesseract OCR', 'ImageMagick (Imagick)', 'Ghostscript', 'AJAX Queue Workers', 'Cron Automation'],
+      heroImg: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80'
+      ],
+      stats: [
+        { val: '10,000+', label: 'Daily conversions', highlight: true, sub: 'Zero bottleneck lag' },
+        { val: '<3.0s', label: 'Average conversion time', sub: 'Parallel background workers' },
+        { val: '99.9%', label: 'Queue execution success', sub: 'Automated retry logic' },
+        { val: '100%', label: 'Privacy & data shredding', sub: 'Automated file purging' }
+      ],
+      overview: 'Any2Convert (any2convert.com) is an online utility that empowers users worldwide to convert documents, images, and text formats directly inside their web browsers.',
+      challenge: 'Heavy file transformations (PDF rendering, raster conversions, OCR scans) are CPU-intensive and can lock up web servers or timeout browser sessions during peak concurrent traffic.',
+      solutionHeading: 'Asynchronous Worker Queue & Secure Ephemeral Pipelines',
+      solution: 'I separated the web frontend from the heavy transformation engine. Uploaded files receive a unique job token and are processed in isolated background worker threads via Tesseract OCR and Imagick. Real-time progress is communicated via AJAX polling, followed by automatic file shredding after download.',
+      keyPoints: [
+        { title: 'Multi-Format File Engine', desc: 'Lossless conversions between PDF, DOCX, PNG, JPG, WebP, and raw text formats.' },
+        { title: 'Tesseract OCR Text Extraction', desc: 'Precision optical character recognition extracting editable text from scanned documents and receipts.' },
+        { title: 'Non-Blocking AJAX Job Queue', desc: 'Keeps the browser interface responsive with animated progress bars during multi-file batch conversions.' },
+        { title: 'Automated Ephemeral Data Purging', desc: 'Cron jobs securely wipe temporary uploaded and converted files after 30 minutes for user privacy.' }
+      ],
+      outcome: 'The platform handles more than 10,000 daily transformations reliably with sub-3-second average completion times and zero browser timeout errors.'
+    },
+    'food-for-nought': {
+      title: 'Food For Nought — Community Food Rescue Platform',
+      badge: 'Charity & NGO',
+      category: 'Community & Non-Profit',
+      tags: ['Charity Web Portal', 'Volunteer Coordination', 'Food Rescue Logistics', 'Impact Metrics', 'Mobile First'],
+      dateRange: '2023 · 6 weeks',
+      tagline: 'Community-driven web platform for a UK food rescue charity, facilitating surplus food collection tracking, volunteer dispatch coordination, and distribution logistics.',
+      client: 'Food For Nought Charity',
+      industry: 'Non-Profit / Food Rescue',
+      location: 'United Kingdom',
+      role: 'Full-Stack Web Developer',
+      timeline: '2023 (6 Weeks)',
+      deliverables: 'Charity Web Portal, Rescue Logistics Tracker, Volunteer Sign-Up Flow, Impact Dashboard',
+      stack: ['PHP / Laravel', 'Tailwind CSS', 'Alpine.js', 'MySQL', 'Accessible UI (WCAG AA)', 'Automated Email Dispatch'],
+      heroImg: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1400&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1400&q=80'
+      ],
+      stats: [
+        { val: '500+', label: 'Tonnes of food rescued', highlight: true, sub: 'Tracked & redistributed' },
+        { val: '+120', label: 'Volunteers coordinated', sub: 'Active driver roster' },
+        { val: '100%', label: 'Mobile accessibility', sub: 'WCAG AA contrast' },
+        { val: 'Zero', label: 'Platform downtime', sub: 'Reliable community hub' }
+      ],
+      overview: 'Food For Nought is a UK charity dedicated to rescuing surplus fresh food from commercial farms and retailers and distributing it directly to local food banks and community centers.',
+      challenge: 'The organization lacked a centralized digital hub to recruit volunteer drivers, showcase measurable social impact to donors, and allow surplus donors to request immediate pickups.',
+      solutionHeading: 'Accessible Community Hub & Streamlined Volunteer Onboarding',
+      solution: 'I designed and built an inviting, high-contrast digital portal emphasizing the charity’s mission and real-world statistics. The system features streamlined volunteer registration forms, donation pickup scheduling, and live counters displaying meals delivered.',
+      keyPoints: [
+        { title: 'Volunteer Dispatch & Registration', desc: 'Simple mobile sign-up forms enabling community drivers to register and choose collection slots.' },
+        { title: 'Live Social Impact Metric Counters', desc: 'Transparent counters showcasing tonnes of rescued produce to build trust with donors and grant committees.' },
+        { title: 'Accessible, Mobile-First UI (WCAG AA)', desc: 'High-contrast, legible typography ensuring seamless accessibility across all smartphone models.' },
+        { title: 'Direct Corporate Donor Channels', desc: 'Structured intake forms for supermarkets and farms to schedule rapid surplus pickups.' }
+      ],
+      outcome: 'The platform helped coordinate the rescue of over 500 tonnes of surplus produce, boosted volunteer signups by 120+, and provided the charity with a credible presence for donor grants.'
+    }
+  },
+  get current() {
+    return this.projectsData[this.activeProjId] || this.projectsData['movins'];
+  },
+  switchProject(id) {
+    this.activeProjId = id;
+    this.activeGalleryImg = 0;
+    const url = new URL(window.location);
+    url.searchParams.set('project', id);
+    window.history.pushState({}, '', url);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}" :class="{'dark':dark}" x-init="
+  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 20;
+    progress = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
+  }, { passive: true });
+" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Project case study by Arbaz Khan — software engineering, ERPs, CRM platforms, mobile applications, and full-stack solutions."/>
+  <meta name="author" content="Arbaz Khan"/>
+  <title x-text="`${current.title} — Case Study | Arbaz Khan`">Case Study — Arbaz Khan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { display: ['PT Sans','sans-serif'], body: ['DM Sans','sans-serif'] },
+          colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' }
+        }
+      }
+    }
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    html{font-family:'DM Sans',sans-serif;}
+    h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif;}
+    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#FF6B2B;border-radius:99px;}
+    body{transition:background-color .3s,color .3s;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
+    .nav-link{position:relative;}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .25s cubic-bezier(.4,0,.2,1);}
+    .nav-link:hover::after{width:100%;}
+    .shimmer{position:relative;overflow:hidden;}
+    .shimmer::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1);}
+    .shimmer:hover::after{left:160%;}
+    [x-cloak]{display:none!important;}
+    .progress-bar{position:fixed;top:0;left:0;height:3px;background:#FF6B2B;z-index:100;transition:width .1s linear;}
+    .stat-badge{border-left:3px solid #FF6B2B;}
+  </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased selection:bg-accent selection:text-white">
+
+  <!-- Progress bar -->
+  <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- ═══ HEADER / NAV ═══ -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    :class="scrolled ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5 border-b border-zinc-100 dark:border-zinc-900' : 'bg-transparent'">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-full bg-accent text-white font-display font-bold flex items-center justify-center text-sm shadow-md shadow-accent/30 group-hover:scale-105 transition-transform">A</span>
+        <span class="font-display font-bold text-lg tracking-tight text-zinc-900 dark:text-white group-hover:text-accent transition-colors">Arbaz Khan</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="hidden md:flex items-center gap-7 text-sm font-medium" role="list">
+        <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
+        <li><a href="projects.html" class="nav-link text-accent font-semibold transition-colors">Work</a></li>
+        <li><a href="index.html#meet" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#workflow" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Process</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button @click="dark = !dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark ? 'Light mode' : 'Dark mode'">
+          <svg x-show="!dark" class="w-4 h-4 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+          <svg x-show="dark" class="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+        </button>
+
+        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-1.5 shimmer bg-accent text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-accent-light transition-colors shadow-md shadow-accent/20">
+          Hire me →
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" aria-label="Toggle Menu">
+          <svg x-show="!mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          <svg x-show="mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Dropdown -->
+    <div x-show="mobileMenu" x-cloak class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900 px-6 py-5 space-y-3">
+      <a href="index.html#services" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Services</a>
+      <a href="projects.html" @click="mobileMenu = false" class="block text-sm font-medium text-accent">Work</a>
+      <a href="index.html#meet" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">About</a>
+      <a href="index.html#workflow" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Process</a>
+      <a href="index.html#contact" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-20 md:pt-24">
+
+    <!-- ═══ BREADCRUMB & HERO HEADER ═══ -->
+    <section class="border-b border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/30 pt-6 pb-12">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Breadcrumbs -->
+        <div class="flex items-center gap-2 text-xs font-semibold text-zinc-400 mb-6">
+          <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+          <span>/</span>
+          <a href="projects.html" class="hover:text-accent transition-colors">Work</a>
+          <span>/</span>
+          <span class="text-zinc-700 dark:text-zinc-300 truncate max-w-[200px] sm:max-w-none" x-text="current.category"></span>
+        </div>
+
+        <!-- Badges & Tagline -->
+        <div class="flex flex-wrap items-center gap-2.5 mb-4">
+          <span class="text-xs bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider" x-text="current.badge"></span>
+          <span class="text-xs text-zinc-400 font-semibold ml-2" x-text="current.dateRange"></span>
+        </div>
+
+        <h1 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-[1.15] mb-6 max-w-4xl"
+            x-text="current.title"></h1>
+
+        <p class="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-3xl"
+           x-text="current.tagline"></p>
+
+      </div>
+    </section>
+
+    <!-- ═══ METRICS STATS BAR ═══ -->
+    <section class="border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 py-8">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <template x-for="(st, sIdx) in current.stats" :key="sIdx">
+            <div class="stat-badge bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6 border border-zinc-200/60 dark:border-zinc-800">
+              <p class="font-display font-bold text-2xl sm:text-3xl md:text-4xl" :class="st.highlight ? 'text-accent' : 'text-zinc-900 dark:text-white'" x-text="st.val"></p>
+              <p class="text-xs font-bold text-zinc-800 dark:text-zinc-200 mt-1" x-text="st.label"></p>
+              <p class="text-[11px] text-zinc-400 dark:text-zinc-500 mt-0.5" x-text="st.sub"></p>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MAIN TWO-COLUMN WORKSPACE ═══ -->
+    <section class="py-12 md:py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+          <!-- ═══ LEFT COLUMN: CASE STUDY BODY (8 cols) ═══ -->
+          <div class="lg:col-span-8 space-y-12">
+
+            <!-- 1. Hero Showcase Browser Frame & Gallery Selector -->
+            <div class="rounded-3xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xl">
+              <!-- Browser Header Bar -->
+              <div class="px-4 py-3 bg-zinc-100 dark:bg-zinc-800/80 border-b border-zinc-200/80 dark:border-zinc-700/80 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-400/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-400/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-400/80 inline-block"></span>
+                </div>
+                <div class="px-4 py-1 rounded-md bg-white dark:bg-zinc-900 border border-zinc-200/70 dark:border-zinc-700 text-[11px] font-mono text-zinc-500 max-w-[240px] sm:max-w-xs truncate" x-text="`https://${activeProjId}.preview`"></div>
+                <div class="text-[11px] font-semibold text-zinc-400 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Live System
+                </div>
+              </div>
+
+              <!-- Main Image Display (Fixed Aspect Ratio) -->
+              <div class="w-full h-72 sm:h-96 md:h-[440px] relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+                <img :src="current.gallery[activeGalleryImg] || current.heroImg" :alt="current.title" class="w-full h-full object-cover object-top transition-all duration-300">
+              </div>
+
+              <!-- Interactive Thumbnail Gallery Strip -->
+              <div class="p-3 bg-zinc-50 dark:bg-zinc-900/90 border-t border-zinc-200/80 dark:border-zinc-800 flex items-center gap-3 overflow-x-auto">
+                <template x-for="(gImg, gIdx) in current.gallery" :key="gIdx">
+                  <button @click="activeGalleryImg = gIdx"
+                          class="w-20 h-14 rounded-xl overflow-hidden border-2 transition-all shrink-0 relative bg-zinc-950"
+                          :class="activeGalleryImg === gIdx ? 'border-accent shadow-md scale-105 ring-2 ring-accent/30' : 'border-transparent opacity-60 hover:opacity-100'">
+                    <img :src="gImg" :alt="`Screenshot ${gIdx + 1}`" class="w-full h-full object-cover object-top">
+                  </button>
+                </template>
+                <span class="text-[11px] font-medium text-zinc-400 pl-2 hidden sm:inline">← Click screenshots to inspect platform views</span>
+              </div>
+            </div>
+
+            <!-- 2. Section 01: Executive Summary -->
+            <div class="p-7 md:p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800 shadow-sm">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent animate-pulse"></span>
+                <span class="text-xs font-bold text-accent tracking-wider uppercase">01 · Background &amp; Context</span>
+              </div>
+              <h2 class="font-display font-bold text-2xl md:text-3xl text-zinc-900 dark:text-white mb-4">Executive Overview</h2>
+              <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base" x-text="current.overview"></p>
+            </div>
+
+            <!-- 3. Section 02: The Core Challenge -->
+            <div class="p-7 md:p-8 rounded-3xl bg-orange-50/40 dark:bg-zinc-900/60 border border-orange-200/60 dark:border-zinc-800 shadow-sm">
+              <span class="text-xs font-bold text-accent tracking-wider uppercase">02 · The Problem</span>
+              <h2 class="font-display font-bold text-2xl md:text-3xl text-zinc-900 dark:text-white mt-1 mb-4">Operational Bottlenecks &amp; Challenge</h2>
+              <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base" x-text="current.challenge"></p>
+            </div>
+
+            <!-- 4. Section 03: The Technical Solution -->
+            <div>
+              <span class="text-xs font-bold text-accent tracking-wider uppercase">03 · Engineered Solution</span>
+              <h2 class="font-display font-bold text-2xl md:text-3xl text-zinc-900 dark:text-white mt-1 mb-4" x-text="current.solutionHeading"></h2>
+              <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base mb-8" x-text="current.solution"></p>
+
+              <!-- Key Solution Deliverables Cards -->
+              <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-4">Key Architecture &amp; Deliverables</h3>
+              <div class="space-y-3.5">
+                <template x-for="(kp, kIdx) in current.keyPoints" :key="kIdx">
+                  <div class="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 flex items-start gap-4 hover:border-accent/40 transition-colors">
+                    <span class="w-7 h-7 rounded-xl bg-orange-100 dark:bg-accent/20 text-accent font-bold text-xs flex items-center justify-center shrink-0 mt-0.5" x-text="kIdx + 1"></span>
+                    <div>
+                      <h4 class="text-sm font-bold text-zinc-900 dark:text-white" x-text="kp.title"></h4>
+                      <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1.5 leading-relaxed" x-text="kp.desc"></p>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+            <!-- 5. Section 04: Business Impact -->
+            <div class="p-7 md:p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800">
+              <span class="text-xs font-bold text-accent tracking-wider uppercase">04 · Results &amp; Value</span>
+              <h2 class="font-display font-bold text-2xl md:text-3xl text-zinc-900 dark:text-white mt-1 mb-4">Measurable Business Impact</h2>
+              <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base" x-text="current.outcome"></p>
+            </div>
+
+          </div>
+
+          <!-- ═══ RIGHT COLUMN: STICKY METADATA SIDEBAR (4 cols) ═══ -->
+          <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+
+            <!-- Card 1: Project Metadata -->
+            <div class="p-6 md:p-7 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 space-y-5">
+              <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white pb-3 border-b border-zinc-200/80 dark:border-zinc-800">Project Overview</h3>
+
+              <div>
+                <p class="text-xs text-zinc-400 uppercase tracking-widest font-semibold mb-1">Client</p>
+                <p class="font-bold text-zinc-900 dark:text-white text-sm" x-text="current.client"></p>
+              </div>
+
+              <div>
+                <p class="text-xs text-zinc-400 uppercase tracking-widest font-semibold mb-1">Industry</p>
+                <p class="font-bold text-zinc-900 dark:text-white text-sm" x-text="current.industry"></p>
+              </div>
+
+              <div>
+                <p class="text-xs text-zinc-400 uppercase tracking-widest font-semibold mb-1">Role &amp; Responsibility</p>
+                <p class="font-bold text-zinc-900 dark:text-white text-sm" x-text="current.role"></p>
+              </div>
+
+              <div>
+                <p class="text-xs text-zinc-400 uppercase tracking-widest font-semibold mb-1">Timeline</p>
+                <p class="font-bold text-zinc-900 dark:text-white text-sm" x-text="current.timeline"></p>
+              </div>
+
+              <div>
+                <p class="text-xs text-zinc-400 uppercase tracking-widest font-semibold mb-2">Technologies Used</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <template x-for="stk in current.stack" :key="stk">
+                    <span class="text-[11px] bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700 px-2.5 py-1 rounded-lg font-medium" x-text="stk"></span>
+                  </template>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-zinc-200/80 dark:border-zinc-800">
+                <a href="index.html#contact" class="shimmer block text-center w-full bg-accent text-white font-display font-bold text-xs py-3.5 rounded-full hover:bg-accent-light transition-colors shadow-md shadow-accent/20">
+                  Build a Similar System →
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2: Quick Project Switcher -->
+            <div class="p-6 md:p-7 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800">
+              <h3 class="font-display font-bold text-sm text-zinc-900 dark:text-white mb-4">Explore Other Projects</h3>
+              <div class="space-y-2">
+                <template x-for="proj in allProjectSlugs" :key="proj.id">
+                  <button @click="switchProject(proj.id)"
+                          class="w-full text-left p-3 rounded-xl border flex items-center justify-between text-xs font-semibold transition-all group"
+                          :class="activeProjId === proj.id ? 'bg-orange-50 dark:bg-accent/15 border-accent text-accent' : 'bg-white dark:bg-zinc-800 border-zinc-200/70 dark:border-zinc-700/80 text-zinc-700 dark:text-zinc-300 hover:border-accent/40'">
+                    <span x-text="proj.name"></span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-400 group-hover:text-accent" x-text="proj.tag"></span>
+                  </button>
+                </template>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-900 py-8 bg-white dark:bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-zinc-400">© <span id="year"></span> Arbaz Khan. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-xs text-zinc-500">
+        <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+        <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+        <a href="service-detail.html" class="hover:text-accent transition-colors">Services</a>
+        <a href="index.html#contact" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

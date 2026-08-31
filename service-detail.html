@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{
+  dark: localStorage.getItem('theme') === 'dark',
+  scrolled: false,
+  mobileMenu: false,
+  activeService: new URLSearchParams(window.location.search).get('service') || 'maintenance',
+  step: 1,
+  servicesData: {
+    'maintenance': {
+      title: 'Website Maintenance & Security',
+      badge: 'Reliability & Care',
+      tagline: 'Continuous security protection, automated backups, and 24/7 health monitoring to keep your web platform running at peak performance.',
+      image: 'picture/team_planning.jpg',
+      p1: 'Your website is a critical part of your business and it needs continuous attention to stay secure, fast, and reliable. My Website Maintenance & Security services take care of everything from regular updates and bug fixes to malware protection, emergency recovery, and performance optimization.',
+      p2: 'I offer tailor-made maintenance plans for WordPress, Shopify, and custom-built PHP/Laravel sites to ensure you are always protected from security vulnerabilities, downtime, and data loss. With automatic backups, uptime monitoring, and expert support, your site remains safe, stable, and smooth always.',
+      p3: 'Whether you’re running a business website, blog, or e-commerce platform, I make sure it stays up to date, secure from hackers, and running at peak performance. So you never lose traffic, trust, or revenue.',
+      deliverables: [
+        { title: 'Automated Offsite Backups', desc: 'Daily & weekly snapshots synced to Google Drive/AWS with 1-click restore.' },
+        { title: 'Malware & Vulnerability Defense', desc: 'Active security firewall, login hardening, and zero-day patch application.' },
+        { title: 'Uptime & Speed Monitoring', desc: '24/7 server health tracking to prevent unexpected downtime and lag.' },
+        { title: 'Dedicated Developer Support', desc: 'Direct on-demand assistance for content changes and technical updates.' }
+      ],
+      manageTitle: 'How We Manage Website Maintenance',
+      totalSteps: 5,
+      steps: [
+        {
+          num: '01',
+          name: 'Audit & Health Check',
+          phaseTag: 'Phase 01 · Diagnostic',
+          heading: 'Full System & Security Audit',
+          desc: 'A comprehensive checkup of your website environment, speed bottlenecks, and potential vulnerabilities.',
+          image: 'picture/meetup_with_stakeholders.jpg',
+          points: [
+            { title: 'Core & Plugin Health Scan', desc: 'Auditing existing codebase, outdated modules, PHP versions, and database tables.' },
+            { title: 'Security Vulnerability Inspection', desc: 'Checking for known security exploits, permission misconfigurations, and malware exposure.' },
+            { title: 'Speed & Uptime Baseline', desc: 'Benchmarking load times and server response speeds before applying routine maintenance.' }
+          ]
+        },
+        {
+          num: '02',
+          name: 'Backup & Recovery',
+          phaseTag: 'Phase 02 · Protection',
+          heading: 'Backup & Recovery Management',
+          desc: 'Ensuring your data is 100% protected with regular, automated, and secure offsite backups.',
+          image: 'picture/team_planning.jpg',
+          points: [
+            { title: 'Automated Daily / Weekly Backups', desc: 'Scheduled background backups that run during off-peak hours without slowing down traffic.' },
+            { title: 'Full Site & Database Snapshots', desc: 'Complete archives of all media files, source code, relational databases, and server configs.' },
+            { title: 'Cloud Backup Integration', desc: 'Secure offsite storage syncing to Google Drive, Dropbox, AWS S3, or private cloud servers.' },
+            { title: 'Quick Restore & Disaster Recovery', desc: 'One-click rollback functionality and rapid disaster recovery plan in case of any emergency.' }
+          ]
+        },
+        {
+          num: '03',
+          name: 'Security Patching',
+          phaseTag: 'Phase 03 · Hardening',
+          heading: 'Security Updates & Hardening',
+          desc: 'Keeping your CMS, frameworks, and server software safely patched against new security threats.',
+          image: 'picture/testing.jpg',
+          points: [
+            { title: 'Staging Environment Testing', desc: 'Applying and validating all core and plugin updates on a sandbox before live deployment.' },
+            { title: 'Firewall & Brute-Force Defense', desc: 'Hardening login endpoints, configuring reCAPTCHA, and limiting invalid attempt rates.' },
+            { title: 'SSL & Security Header Setup', desc: 'Enforcing HTTPS encryption, HSTS policies, and modern HTTP response security headers.' }
+          ]
+        },
+        {
+          num: '04',
+          name: 'Performance Tuning',
+          phaseTag: 'Phase 04 · Optimization',
+          heading: 'Speed Optimization & Database Cleaning',
+          desc: 'Fine-tuning database queries and removing bloated logs to ensure lightning-fast page loading.',
+          image: 'picture/development.jpg',
+          points: [
+            { title: 'Database Overhead Cleanup', desc: 'Optimizing MySQL tables, cleaning transients, orphaned rows, and post revisions.' },
+            { title: 'Cache & Asset Configuration', desc: 'Setting up browser caching, Gzip compression, and optimizing media delivery.' },
+            { title: 'Core Web Vitals Monitoring', desc: 'Keeping Google Lighthouse performance and First Contentful Paint benchmarks in the green zone.' }
+          ]
+        },
+        {
+          num: '05',
+          name: '24/7 Monitoring',
+          phaseTag: 'Phase 05 · Support',
+          heading: 'Continuous Monitoring & Monthly Reports',
+          desc: 'Round-the-clock uptime monitoring and dedicated technical assistance whenever you need updates.',
+          image: 'picture/deployment.jpg',
+          points: [
+            { title: '24/7 Real-Time Uptime Tracking', desc: 'Instant automated alerts if downtime occurs with rapid response protocols.' },
+            { title: 'Monthly Maintenance Reports', desc: 'Transparent breakdown of updates applied, security scans performed, and speed gains.' },
+            { title: 'On-Demand Content & Feature Support', desc: 'Direct developer support for minor fixes, content tweaks, and feature improvements.' }
+          ]
+        }
+      ]
+    },
+    'app-development': {
+      title: 'Mobile & Web App Development',
+      badge: 'Mobile & Cross-Platform',
+      tagline: 'High-performance mobile applications, courier & logistics tracking tools, and custom app backends built for smooth user experiences.',
+      image: 'picture/movins.png',
+      p1: 'Mobile applications require instantaneous responsiveness, intuitive user navigation, and resilient backend synchronization. My App Development services specialize in building cross-platform mobile solutions, on-demand courier and package delivery tracking applications, and enterprise workflow utilities.',
+      p2: 'I engineer fluid frontend mobile experiences paired with robust RESTful APIs, real-time GPS location tracking, push notifications, and secure authentication to handle high user volume without latency.',
+      p3: 'From initial screen flows and Figma UI components to live courier dispatch routing (such as the Movins courier app) and production app store release, I build mobile applications that scale effortlessly.',
+      deliverables: [
+        { title: 'Cross-Platform Mobile Apps', desc: 'Native-feel iOS and Android mobile apps with smooth 60fps animations.' },
+        { title: 'Live GPS & Courier Tracking', desc: 'Real-time parcel delivery status, driver dispatch, and interactive map routes.' },
+        { title: 'RESTful API & Auth Backend', desc: 'Secure token authentication, role management, and asynchronous data sync.' },
+        { title: 'Store & Production Release', desc: 'Complete build pipeline, store asset preparation, and cloud server deployment.' }
+      ],
+      manageTitle: 'How We Manage App Development',
+      totalSteps: 5,
+      steps: [
+        {
+          num: '01',
+          name: 'Flows & Scope',
+          phaseTag: 'Phase 01 · Alignment',
+          heading: 'User Flows & Feature Architecture',
+          desc: 'Mapping out user journeys, driver/customer roles, and core delivery specifications.',
+          image: 'picture/meetup_with_stakeholders.jpg',
+          points: [
+            { title: 'User Journey & Role Mapping', desc: 'Defining customer, driver, and admin workflows, permissions, and booking journeys.' },
+            { title: 'Feature Priority & Milestones', desc: 'Breakdown of core MVP deliverables, push notification triggers, and live tracking milestones.' },
+            { title: 'API & Tech Stack Selection', desc: 'Choosing optimal cross-platform frameworks, mapping engines (Google Maps/Mapbox), and backend APIs.' }
+          ]
+        },
+        {
+          num: '02',
+          name: 'App UI/UX',
+          phaseTag: 'Phase 02 · Design',
+          heading: 'Wireframing & High-Fidelity UI/UX',
+          desc: 'Designing clean, thumb-friendly mobile layouts with intuitive navigational ergonomics.',
+          image: 'picture/designing.jpg',
+          points: [
+            { title: 'Mobile Wireframe Blueprints', desc: 'Rapid prototyping of key mobile screens including login, booking, live map, and order history.' },
+            { title: 'Interactive Clickable Prototypes', desc: 'Validating micro-interactions, gesture navigation, and screen transitions before development.' },
+            { title: 'Design System & Component Kit', desc: 'Consistent typography, high-contrast dark/light UI tokens, and accessible form inputs.' }
+          ]
+        },
+        {
+          num: '03',
+          name: 'Core App Build',
+          phaseTag: 'Phase 03 · Development',
+          heading: 'Mobile Engineering & Real-Time APIs',
+          desc: 'Coding the mobile frontend and integrating real-time backend API endpoints.',
+          image: 'picture/development.jpg',
+          points: [
+            { title: 'Frontend Component Architecture', desc: 'Modular, maintainable mobile code with efficient state management and zero UI lag.' },
+            { title: 'Real-Time Location & WebSockets', desc: 'Live GPS coordinate broadcasting, parcel movement tracking, and automated status alerts.' },
+            { title: 'Secure API & Payment Gateways', desc: 'Token-based REST APIs, encrypted payload transmission, and seamless checkout integrations.' }
+          ]
+        },
+        {
+          num: '04',
+          name: 'Device QA',
+          phaseTag: 'Phase 04 · Quality Assurance',
+          heading: 'Real-Device Testing & Network Simulation',
+          desc: 'Thorough testing across varied screen sizes, operating systems, and network conditions.',
+          image: 'picture/testing.jpg',
+          points: [
+            { title: 'Cross-Device & OS Compatibility', desc: 'Testing responsive layouts on various Android and iOS screen aspect ratios and notches.' },
+            { title: 'Offline Mode & Caching', desc: 'Local SQLite/AsyncStorage caching to ensure stability during low or intermittent connectivity.' },
+            { title: 'Battery & Memory Profiling', desc: 'Eliminating background location drain and memory leaks for smooth device performance.' }
+          ]
+        },
+        {
+          num: '05',
+          name: 'Store Release',
+          phaseTag: 'Phase 05 · Launch',
+          heading: 'App Store Submission & Production Monitoring',
+          desc: 'Deploying the backend server cluster and publishing the app to target app stores.',
+          image: 'picture/deployment.jpg',
+          points: [
+            { title: 'App Store & Play Store Assets', desc: 'Preparing cryptographic signing keys, screenshots, and compliance documentation.' },
+            { title: 'Backend Cloud Deployment', desc: 'Deploying production database clusters with automated scaling and SSL encryption.' },
+            { title: 'Live Telemetry & Crash Analytics', desc: 'Real-time crash tracking, error monitoring, and continuous post-launch performance updates.' }
+          ]
+        }
+      ]
+    },
+    'web-development': {
+      title: 'Web Development & Custom Systems',
+      badge: 'Full-Stack Engineering',
+      tagline: 'High-performance web applications, enterprise ERPs, and conversion-focused landing pages built with clean, scalable code.',
+      image: 'picture/development.jpg',
+      p1: 'Your web application is the core engine of your business operations and client interactions. My Web Development services cover everything from full-stack portals and enterprise ERP/CRM systems to conversion-focused landing pages built with clean, scalable, and maintainable architecture.',
+      p2: 'I engineer robust web solutions utilizing modern PHP (Laravel & CodeIgniter), normalized MySQL database schemas, secure RESTful APIs, and fast AJAX interactions that eliminate lag and keep operations fluid.',
+      p3: 'Whether you are launching a new product from scratch, automating internal workflows, or expanding an existing system, I ensure your platform runs securely, loads fast, and scales seamlessly as your business grows.',
+      deliverables: [
+        { title: 'Custom ERP & Business Portals', desc: 'Modular management systems with multi-level role access control (RBAC).' },
+        { title: 'Clean Relational MySQL Architecture', desc: 'Normalized schemas designed for high concurrency and zero data corruption.' },
+        { title: 'Fluid AJAX & API Integrations', desc: 'Real-time asynchronous actions, PayPal checkout, and third-party webhooks.' },
+        { title: 'Mobile-First Responsive UI', desc: 'Fast, pixel-perfect frontend layouts optimized for conversion on all devices.' }
+      ],
+      manageTitle: 'How We Manage Web Development',
+      totalSteps: 5,
+      steps: [
+        {
+          num: '01',
+          name: 'Discovery & Scope',
+          phaseTag: 'Phase 01 · Alignment',
+          heading: 'Discovery & Requirements Roadmap',
+          desc: 'Understanding your business goals, target audience, and project boundaries before writing any code.',
+          image: 'picture/meetup_with_stakeholders.jpg',
+          points: [
+            { title: 'Kickoff & Business Goal Alignment', desc: 'Understanding your target audience, core user journeys, and operational pain points.' },
+            { title: 'Scope of Work & Milestone Breakdown', desc: 'Defining clear user roles, feature specifications, deliverables, and delivery timelines.' },
+            { title: 'Tech Stack & Feasibility Decision', desc: 'Selecting optimal frameworks (Laravel/PHP), database engines, and third-party APIs.' }
+          ]
+        },
+        {
+          num: '02',
+          name: 'System Architecture',
+          phaseTag: 'Phase 02 · Blueprint',
+          heading: 'Database & System Architecture',
+          desc: 'Designing clean relational database models, API routes, and structured business logic workflows.',
+          image: 'picture/team_planning.jpg',
+          points: [
+            { title: 'Relational Database Modeling', desc: 'Creating normalized MySQL schemas with indexed foreign keys and strict data integrity.' },
+            { title: 'RESTful API & Workflow Mapping', desc: 'Designing secure endpoints, request validations, and role-based permissions (RBAC).' },
+            { title: 'Component & Flow Sign-off', desc: 'Reviewing functional prototypes and architecture with stakeholders prior to coding.' }
+          ]
+        },
+        {
+          num: '03',
+          name: 'Core Development',
+          phaseTag: 'Phase 03 · Build',
+          heading: 'Modular Backend & UI Development',
+          desc: 'Writing clean, scalable code for all business modules, dashboards, and automated workflows.',
+          image: 'picture/development.jpg',
+          points: [
+            { title: 'ERP, CRM & Management Modules', desc: 'Building custom data pipelines, dynamic search filters, and administrative portals.' },
+            { title: 'Asynchronous AJAX Operations', desc: 'Fluid user interactions with instant updates and zero disruptive page reloads.' },
+            { title: 'Integrations & OCR Automation', desc: 'Connecting payment gateways (PayPal), transactional alerts, and automated data scripts.' }
+          ]
+        },
+        {
+          num: '04',
+          name: 'Testing & QA',
+          phaseTag: 'Phase 04 · Quality',
+          heading: 'Validation, Debugging & QA Audit',
+          desc: 'Thorough testing across all user roles, devices, and edge cases to ensure zero regressions.',
+          image: 'picture/testing.jpg',
+          points: [
+            { title: 'End-to-End Workflow Testing', desc: 'Simulating multi-role user flows from authentication to checkout and data export.' },
+            { title: 'Slow Query & Performance Audit', desc: 'Tuning SQL queries and indexing large tables for millisecond response times.' },
+            { title: 'Cross-Device Responsiveness', desc: 'Pixel-perfect mobile, tablet, and desktop layout audits across all modern browsers.' }
+          ]
+        },
+        {
+          num: '05',
+          name: 'Launch & Handover',
+          phaseTag: 'Phase 05 · Rollout',
+          heading: 'Production Deployment & Support',
+          desc: 'Zero-downtime server configuration, live smoke testing, and post-launch maintenance.',
+          image: 'picture/deployment.jpg',
+          points: [
+            { title: 'Live Server Environment Setup', desc: 'Configuring secure production hosting, SSL certificates, and PHP runtime settings.' },
+            { title: 'Live Smoke Testing & Handover', desc: 'Verifying all live workflows, transactions, and background cron schedules.' },
+            { title: 'Documentation & Post-Launch Care', desc: 'Providing clear technical documentation and ongoing warranty support.' }
+          ]
+        }
+      ]
+    },
+    'bug-fixing': {
+      title: 'Bug Fixing & Deep Diagnostics',
+      badge: 'Rapid Troubleshooting',
+      tagline: 'Swift root-cause diagnostics and permanent fixes for broken layouts, backend errors, and database anomalies.',
+      image: 'picture/testing.jpg',
+      p1: 'A single software glitch or broken layout can disrupt user trust and cause immediate revenue loss. My Bug Fixing & Diagnostic services provide fast, deep-level troubleshooting to identify root causes and implement clean, permanent solutions without breaking existing features.',
+      p2: 'From PHP fatal errors, database query crashes, and broken AJAX calls to misaligned CSS grids and mobile responsiveness failures, I systematically debug production codebases under strict zero-downtime standards.',
+      p3: 'You receive clear explanations of what went wrong, an immediate fix, and proactive safeguards to prevent the same issue from ever occurring again.',
+      deliverables: [
+        { title: 'Rapid Root-Cause Diagnosis', desc: 'Accurately locating server exceptions, query timeouts, and script conflicts.' },
+        { title: 'Non-Invasive Clean Patches', desc: 'Fixing the error permanently without risking regressions in connected modules.' },
+        { title: 'Cross-Browser Layout Repairs', desc: 'Correcting broken CSS, misaligned grids, and mobile responsiveness glitches.' },
+        { title: 'Post-Fix Stability Verification', desc: 'Full-flow regression testing and real-time log monitoring post-deployment.' }
+      ],
+      manageTitle: 'How We Manage Bug Fixing & Diagnostics',
+      totalSteps: 5,
+      steps: [
+        {
+          num: '01',
+          name: 'Error Reproduction',
+          phaseTag: 'Phase 01 · Discovery',
+          heading: 'Error Logging & Environment Trace',
+          desc: 'Capturing exact error conditions, stack traces, and environment parameters.',
+          image: 'picture/meetup_with_stakeholders.jpg',
+          points: [
+            { title: 'Server & Database Log Review', desc: 'Analyzing Apache/Nginx error logs, PHP exceptions, and MySQL slow query logs.' },
+            { title: 'Safe Sandbox Reproduction', desc: 'Reproducing the exact error state in a safe staging environment to protect live users.' },
+            { title: 'Console & Network Payload Trace', desc: 'Inspecting failed HTTP requests, status codes, and JavaScript runtime errors.' }
+          ]
+        },
+        {
+          num: '02',
+          name: 'Root Cause Analysis',
+          phaseTag: 'Phase 02 · Inspection',
+          heading: 'Deep Code & Query Inspection',
+          desc: 'Pinpointing the exact fault in the application logic, queries, or stylesheets.',
+          image: 'picture/team_planning.jpg',
+          points: [
+            { title: 'Controller & Model Debugging', desc: 'Tracing unhandled exceptions, incorrect variables, and broken relational calls.' },
+            { title: 'Database Table Integrity Check', desc: 'Verifying column data types, NULL value constraints, and foreign key relations.' },
+            { title: 'CSS & Responsive Layout Audit', desc: 'Inspecting broken flexbox/grid rules and conflicting media query overrides.' }
+          ]
+        },
+        {
+          num: '03',
+          name: 'Targeted Patching',
+          phaseTag: 'Phase 03 · Fix',
+          heading: 'Clean Code Patch & Refactoring',
+          desc: 'Applying precise, non-invasive code fixes that preserve all surrounding logic.',
+          image: 'picture/development.jpg',
+          points: [
+            { title: 'Clean, Readable Code Fixes', desc: 'Writing modular code with proper try/catch blocks and input sanitization.' },
+            { title: 'Query & Schema Optimization', desc: 'Rewriting faulty database queries to prevent memory leaks and server timeouts.' },
+            { title: 'Cross-Viewport Layout Alignment', desc: 'Fixing styling bugs across mobile, tablet, and high-resolution monitors.' }
+          ]
+        },
+        {
+          num: '04',
+          name: 'Regression Testing',
+          phaseTag: 'Phase 04 · Verification',
+          heading: 'Full Flow & Zero-Regression Test',
+          desc: 'Testing all connected features to ensure zero side-effects across the codebase.',
+          image: 'picture/testing.jpg',
+          points: [
+            { title: 'End-to-End User Flow Check', desc: 'Verifying that connected modules and forms function perfectly with the patch applied.' },
+            { title: 'Database Consistency Check', desc: 'Ensuring new records insert cleanly without triggering foreign key conflicts.' },
+            { title: 'Multi-Device Validation', desc: 'Testing patch behavior across Chrome, Safari, Firefox, iOS, and Android.' }
+          ]
+        },
+        {
+          num: '05',
+          name: 'Live Patch Rollout',
+          phaseTag: 'Phase 05 · Release',
+          heading: 'Safe Production Rollout & Summary',
+          desc: 'Deploying the verified patch to production with a clear diagnostic breakdown.',
+          image: 'picture/deployment.jpg',
+          points: [
+            { title: 'Zero-Downtime Deployment', desc: 'Deploying the tested fix directly to production during optimal time windows.' },
+            { title: 'Real-Time Smoke Monitoring', desc: 'Actively watching server logs post-deploy to guarantee 100% stability.' },
+            { title: 'Diagnostic Client Summary', desc: 'Providing an easy-to-read explanation of why the bug occurred and how it was resolved.' }
+          ]
+        }
+      ]
+    },
+    'seo': {
+      title: 'SEO & Performance Speed Optimization',
+      badge: 'Organic Search Growth',
+      tagline: 'Boost search rankings, pass Google Core Web Vitals, and deliver lightning-fast loading experiences.',
+      image: 'picture/meetup_with_stakeholders.jpg',
+      p1: 'A high-ranking website requires more than just keywords — search engines prioritize fast, accessible, mobile-optimized sites with clean technical structure. My SEO & Speed Optimization services eliminate technical bottlenecks that drag down your search performance.',
+      p2: 'I optimize Google Core Web Vitals (LCP, INP, CLS), streamline server response times, compress assets, and structure your code with semantic HTML5 tags and Schema.org rich snippets for maximum search visibility.',
+      p3: 'With improved page load speeds under 2 seconds and pristine technical SEO markup, your website converts more incoming traffic into paying customers while outranking your competitors on Google.',
+      deliverables: [
+        { title: 'PageSpeed 90+ & Core Web Vitals', desc: 'Slashing LCP and layout shifts to deliver sub-2-second load times.' },
+        { title: 'Technical On-Page Structure', desc: 'Semantic HTML5 heading hierarchy, meta descriptions, and clean URL slugs.' },
+        { title: 'Schema.org JSON-LD Rich Snippets', desc: 'Enabling structured business cards, breadcrumbs, and Google rich results.' },
+        { title: 'Asset Compression & Caching', desc: 'Next-gen WebP conversion, script deferral, and server-level gzip compression.' }
+      ],
+      manageTitle: 'How We Manage SEO & Speed Optimization',
+      totalSteps: 5,
+      steps: [
+        {
+          num: '01',
+          name: 'Technical SEO Audit',
+          phaseTag: 'Phase 01 · Diagnostic',
+          heading: 'Baseline Performance & Crawl Audit',
+          desc: 'In-depth audit of PageSpeed Insights, Lighthouse scores, and crawlability issues.',
+          image: 'picture/meetup_with_stakeholders.jpg',
+          points: [
+            { title: 'Google Lighthouse Score Breakdown', desc: 'Benchmarking performance, accessibility, best practices, and SEO scores.' },
+            { title: 'Core Web Vitals Metric Audit', desc: 'Measuring Largest Contentful Paint (LCP), INP, and Cumulative Layout Shift (CLS).' },
+            { title: 'Crawl & Indexability Check', desc: 'Inspecting sitemap.xml, robots.txt, canonical URLs, and 404 broken links.' }
+          ]
+        },
+        {
+          num: '02',
+          name: 'Speed Optimization',
+          phaseTag: 'Phase 02 · Acceleration',
+          heading: 'Asset Streamlining & Code Minification',
+          desc: 'Slashing load times by minifying code and removing render-blocking resources.',
+          image: 'picture/team_planning.jpg',
+          points: [
+            { title: 'Next-Gen Media (WebP) & Lazy Load', desc: 'Compressing heavy images and loading assets only when visible to save bandwidth.' },
+            { title: 'CSS/JS Minification & Deferral', desc: 'Eliminating render-blocking scripts so the main content renders immediately.' },
+            { title: 'Gzip / Brotli & Cache Headers', desc: 'Configuring server-level compression and long-term browser cache policies.' }
+          ]
+        },
+        {
+          num: '03',
+          name: 'On-Page Structure',
+          phaseTag: 'Phase 03 · Markup',
+          heading: 'Semantic HTML5 & Heading Hierarchy',
+          desc: 'Structuring HTML hierarchy so search engines easily understand your content.',
+          image: 'picture/development.jpg',
+          points: [
+            { title: 'Strict Single H1 Hierarchy', desc: 'Organizing logical H2-H4 subheadings with keyword-optimized titles.' },
+            { title: 'Optimized Meta Titles & Descriptions', desc: 'Crafting compelling, click-worthy metadata that improves search CTR.' },
+            { title: 'Descriptive Image ALT Tags', desc: 'Adding contextual accessibility ALT attributes to all visual assets.' }
+          ]
+        },
+        {
+          num: '04',
+          name: 'Structured Schema',
+          phaseTag: 'Phase 04 · Data',
+          heading: 'Schema.org Structured Data Injection',
+          desc: 'Implementing Schema.org JSON-LD markup to earn rich search results on Google.',
+          image: 'picture/testing.jpg',
+          points: [
+            { title: 'ProfessionalService & Local Schema', desc: 'Injecting structured rich snippet data for businesses and portfolios.' },
+            { title: 'OpenGraph Social Meta Tags', desc: 'Ensuring beautiful preview cards when links are shared on LinkedIn, WhatsApp, and X.' },
+            { title: 'Google Rich Results Validation', desc: 'Testing schemas with Google Rich Results Test to verify error-free indexing.' }
+          ]
+        },
+        {
+          num: '05',
+          name: 'Tracking & Handover',
+          phaseTag: 'Phase 05 · Results',
+          heading: 'Verification & Performance Report',
+          desc: 'Validating final performance metrics and delivering a before-and-after report.',
+          image: 'picture/deployment.jpg',
+          points: [
+            { title: 'Post-Optimization Score Audit', desc: 'Verifying green 90+ PageSpeed scores on both mobile and desktop viewports.' },
+            { title: 'Google Search Console Re-Indexing', desc: 'Submitting updated sitemaps for priority crawling and faster ranking indexation.' },
+            { title: 'Delivering Before-After Report', desc: 'Providing clients with clear data proof of speed improvements and SEO health.' }
+          ]
+        }
+      ]
+    },
+    'wordpress': {
+      title: 'WordPress & WooCommerce Solutions',
+      badge: 'Custom CMS Development',
+      tagline: 'Bespoke WordPress themes, WooCommerce stores, and plugin integrations engineered for effortless editing.',
+      image: 'picture/designing.jpg',
+      p1: 'WordPress powers over 40% of the web, but generic bloated themes often lead to slow speeds, security vulnerabilities, and messy edit screens. My WordPress & WooCommerce services build fast, secure, and custom-tailored websites designed specifically for your brand.',
+      p2: 'I create lightweight custom themes, configure seamless WooCommerce online stores with payment gateway integrations, and customize plugins to deliver the exact features your business requires without unnecessary plugin bloat.',
+      p3: 'You receive an intuitive, client-friendly admin dashboard that allows you and your team to update text, products, and media with zero coding knowledge.',
+      deliverables: [
+        { title: 'Custom Lightweight Themes', desc: 'Fast, bloat-free templates coded from scratch matching your exact brand.' },
+        { title: 'WooCommerce E-Commerce Stores', desc: 'Secure payment gateway integrations, shipping rules, and branded receipts.' },
+        { title: 'Effortless Client Admin Dashboard', desc: 'Advanced custom fields allowing non-technical teams to edit content easily.' },
+        { title: 'Zero-Downtime Host Migration', desc: 'Seamless migration to your live server with SSL and search indexing intact.' }
+      ],
+      manageTitle: 'How We Manage WordPress Development',
+      totalSteps: 5,
+      steps: [
+        {
+          num: '01',
+          name: 'Planning & Taxonomy',
+          phaseTag: 'Phase 01 · Planning',
+          heading: 'Site Architecture & Store Setup',
+          desc: 'Defining site structure, product taxonomy, and custom feature requirements.',
+          image: 'picture/meetup_with_stakeholders.jpg',
+          points: [
+            { title: 'Objective & Content Mapping', desc: 'Defining page layouts, user roles, product categories, and custom data fields.' },
+            { title: 'Curated Plugin Stack Selection', desc: 'Choosing lightweight, secure plugins to avoid plugin bloat and slowdowns.' },
+            { title: 'E-Commerce Workflow Blueprint', desc: 'Mapping out payment gateways, checkout fields, and order confirmation flows.' }
+          ]
+        },
+        {
+          num: '02',
+          name: 'Theme Development',
+          phaseTag: 'Phase 02 · Build',
+          heading: 'Custom Lightweight Theme Build',
+          desc: 'Coding clean, fast, and responsive WordPress templates matching your brand.',
+          image: 'picture/designing.jpg',
+          points: [
+            { title: 'Clean Modular Templates', desc: 'Building custom theme templates without heavy page builder bloat.' },
+            { title: 'Easy Custom Fields (ACF)', desc: 'Creating intuitive back-office input fields for easy text and image editing.' },
+            { title: 'Mobile-First UI Styling', desc: 'Ensuring smooth touch navigation and fast rendering on all smartphones.' }
+          ]
+        },
+        {
+          num: '03',
+          name: 'WooCommerce Setup',
+          phaseTag: 'Phase 03 · Store',
+          heading: 'WooCommerce & Payment Gateways',
+          desc: 'Configuring online stores, checkout gateways, and automated customer emails.',
+          image: 'picture/development.jpg',
+          points: [
+            { title: 'Payment Gateway Integration', desc: 'Setting up PayPal, Stripe, credit cards, or direct bank transfer checkout.' },
+            { title: 'Automated Transactional Emails', desc: 'Customizing branded order receipts, invoice PDFs, and admin notifications.' },
+            { title: 'Shipping & Tax Rules Configuration', desc: 'Configuring regional shipping zones, flat rates, and automated sales taxes.' }
+          ]
+        },
+        {
+          num: '04',
+          name: 'Speed & Security',
+          phaseTag: 'Phase 04 · Hardening',
+          heading: 'Security Hardening & Speed Tuning',
+          desc: 'Locking down WordPress security and optimizing page speeds for fast loading.',
+          image: 'picture/testing.jpg',
+          points: [
+            { title: 'Login & Admin Hardening', desc: 'Hiding default WP endpoints, adding 2FA, and disabling XML-RPC exploits.' },
+            { title: 'PageSpeed & Cache Configuration', desc: 'Configuring Redis/object caching, WebP conversion, and script minification.' },
+            { title: 'Database Optimization', desc: 'Cleaning orphaned transients and setting up scheduled auto-maintenance.' }
+          ]
+        },
+        {
+          num: '05',
+          name: 'Launch & Training',
+          phaseTag: 'Phase 05 · Handover',
+          heading: 'Live Migration & Video Walkthrough',
+          desc: 'Migrating seamlessly to your production host and providing video walkthroughs.',
+          image: 'picture/deployment.jpg',
+          points: [
+            { title: 'Zero-Downtime Host Migration', desc: 'Moving database and files to live hosting with active SSL verification.' },
+            { title: 'Client Admin Video Tutorial', desc: 'Providing a recorded video guide showing you exactly how to edit content easily.' },
+            { title: '30-Day Post-Launch Warranty', desc: 'Dedicated bug fix support to guarantee smooth day-to-day operations.' }
+          ]
+        }
+      ]
+    }
+  },
+  get current() {
+    return this.servicesData[this.activeService] || this.servicesData['maintenance'];
+  },
+  next() {
+    this.step = this.step < this.current.steps.length ? this.step + 1 : 1;
+  },
+  prev() {
+    this.step = this.step > 1 ? this.step - 1 : this.current.steps.length;
+  }
+}" :class="{'dark':dark}" x-init="
+  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 20;
+  }, { passive: true });
+" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Professional software development, bug fixing, website maintenance, SEO, and WordPress solutions by Arbaz Khan."/>
+  <meta name="author" content="Arbaz Khan"/>
+  <title>Service Details — Arbaz Khan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { display: ['PT Sans','sans-serif'], body: ['DM Sans','sans-serif'] },
+          colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' }
+        }
+      }
+    }
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    html{font-family:'DM Sans',sans-serif;}
+    h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif;}
+    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#FF6B2B;border-radius:99px;}
+    body{transition:background-color .3s,color .3s;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
+    .nav-link{position:relative;}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .25s cubic-bezier(.4,0,.2,1);}
+    .nav-link:hover::after{width:100%;}
+    .shimmer{position:relative;overflow:hidden;}
+    .shimmer::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1);}
+    .shimmer:hover::after{left:160%;}
+    [x-cloak]{display:none!important;}
+  </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased selection:bg-accent selection:text-white">
+
+  <!-- ═══ HEADER / NAV ═══ -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    :class="scrolled ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5 border-b border-zinc-100 dark:border-zinc-900' : 'bg-transparent'">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-full bg-accent text-white font-display font-bold flex items-center justify-center text-sm shadow-md shadow-accent/30 group-hover:scale-105 transition-transform">A</span>
+        <span class="font-display font-bold text-lg tracking-tight text-zinc-900 dark:text-white group-hover:text-accent transition-colors">Arbaz Khan</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="hidden md:flex items-center gap-7 text-sm font-medium" role="list">
+        <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
+        <li><a href="index.html#meet" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#workflow" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Process</a></li>
+        <li><a href="index.html#work" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button @click="dark = !dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark ? 'Light mode' : 'Dark mode'">
+          <svg x-show="!dark" class="w-4 h-4 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+          <svg x-show="dark" class="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+        </button>
+
+        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-1.5 shimmer bg-accent text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-accent-light transition-colors shadow-md shadow-accent/20">
+          Hire me →
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" aria-label="Toggle Menu">
+          <svg x-show="!mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          <svg x-show="mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Dropdown -->
+    <div x-show="mobileMenu" x-cloak class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900 px-6 py-5 space-y-3">
+      <a href="index.html#services" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Services</a>
+      <a href="index.html#meet" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">About</a>
+      <a href="index.html#workflow" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Process</a>
+      <a href="index.html#work" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Work</a>
+      <a href="index.html#contact" @click="mobileMenu = false" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-20 md:pt-24">
+
+    <!-- ═══ 1. CLEAN HERO SECTION ═══ -->
+    <section class="pt-4 pb-12 md:pb-16">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Breadcrumb Link -->
+        <a href="index.html#services" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-5">
+          ← Back to All Services
+        </a>
+
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold text-accent tracking-widest uppercase mb-2.5" x-text="current.badge"></p>
+          <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-zinc-900 dark:text-white leading-[1.1] mb-5"
+              x-text="current.title"></h1>
+          <p class="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-8"
+             x-text="current.tagline"></p>
+          
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="index.html#contact" class="shimmer inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-sm px-7 py-3.5 rounded-full hover:bg-accent-light transition-colors shadow-md shadow-accent/20">
+              Discuss Your Project →
+            </a>
+            <a href="#workflow" class="inline-flex items-center gap-2 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium text-sm px-6 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
+              Explore How We Manage ↓
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 2. DETAILED SERVICE VALUE SECTION (SPLIT WITH RIGHT-SIDE IMAGE) ═══ -->
+    <section class="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/40 border-y border-zinc-100 dark:border-zinc-900/60">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+          <!-- Left Narrative / Value Points -->
+          <div class="lg:col-span-7 space-y-5">
+            <span class="text-xs font-semibold text-accent tracking-widest uppercase">Comprehensive Service Overview</span>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-zinc-900 dark:text-white leading-tight">
+              Reliable, Proactive &amp; Tailored Execution
+            </h2>
+            
+            <div class="space-y-4 text-zinc-600 dark:text-zinc-300 text-sm md:text-base leading-relaxed">
+              <p x-text="current.p1"></p>
+              <p x-text="current.p2"></p>
+              <p x-text="current.p3" class="font-medium text-zinc-900 dark:text-white"></p>
+            </div>
+
+            <!-- Key Feature Checkmarks Box -->
+            <div class="mt-6 pt-6 border-t border-zinc-200/80 dark:border-zinc-800 grid sm:grid-cols-2 gap-3">
+              <template x-for="(deliv, dIdx) in current.deliverables" :key="dIdx">
+                <div class="flex items-start gap-2.5 p-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/70 dark:border-zinc-800">
+                  <span class="w-5 h-5 rounded-full bg-orange-100 dark:bg-accent/20 text-accent font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                  <div>
+                    <p class="text-xs font-bold text-zinc-900 dark:text-white" x-text="deliv.title"></p>
+                    <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 leading-snug" x-text="deliv.desc"></p>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <div class="pt-4 flex items-center gap-6">
+              <div>
+                <p class="font-display font-bold text-2xl text-zinc-900 dark:text-white">100%</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Production Ready</p>
+              </div>
+              <div class="h-8 w-[1px] bg-zinc-200 dark:bg-zinc-800"></div>
+              <div>
+                <p class="font-display font-bold text-2xl text-zinc-900 dark:text-white">Zero</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Downtime Risk</p>
+              </div>
+              <div class="h-8 w-[1px] bg-zinc-200 dark:bg-zinc-800"></div>
+              <div>
+                <p class="font-display font-bold text-2xl text-zinc-900 dark:text-white">24/7</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Reliable Support</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side Contextual Image -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden shadow-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+              <img :src="current.image" :alt="current.title" class="w-full h-80 md:h-[430px] object-cover">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 3. "HOW WE MANAGE" INTERACTIVE SLIDER (EXACT HOMEPAGE WORKFLOW STRUCTURE) ═══ -->
+    <section id="workflow" class="py-24 bg-white dark:bg-zinc-950 border-b border-zinc-100 dark:border-zinc-900/60">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Section Header & Prev/Next Controls -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
+          <div>
+            <p class="text-xs font-semibold text-accent tracking-widest uppercase mb-2">Process &amp; Methodology</p>
+            <h2 class="font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white"
+                x-text="current.manageTitle"></h2>
+            <p class="text-zinc-600 dark:text-zinc-400 text-sm md:text-base max-w-xl mt-3">
+              A structured step-by-step lifecycle engineered for complete transparency, safety, and peak performance.
+            </p>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mr-1">
+              Phase <span class="text-accent font-bold" x-text="step"></span> of <span x-text="current.steps.length"></span>
+            </span>
+            <button @click="prev()" aria-label="Previous step"
+              class="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-accent hover:text-accent bg-zinc-50 dark:bg-zinc-900 transition-colors">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button @click="next()" aria-label="Next step"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-accent text-white hover:bg-accent-light transition-colors shadow-md shadow-accent/20">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ═══ CONNECTED TIMELINE STEPPER (EXACT MATCHING MATHEMATICAL CENTER) ═══ -->
+        <div class="mb-16 md:mb-20 max-w-5xl mx-auto px-4">
+          <div class="relative flex items-start justify-between">
+
+            <!-- Background Track (Positioned at exact center of circle) -->
+            <div class="absolute left-8 right-8 top-7 md:top-8 -translate-y-1/2 h-[3px] bg-zinc-200 dark:bg-zinc-800 z-0"></div>
+
+            <!-- Active Progress Fill Track -->
+            <div class="absolute left-8 top-7 md:top-8 -translate-y-1/2 h-[3px] bg-accent transition-all duration-500 ease-out z-0"
+                 :style="`width: ${((step - 1) / (current.steps.length - 1)) * 100}%`"></div>
+
+            <!-- Dynamic Stepper Nodes -->
+            <template x-for="(st, idx) in current.steps" :key="idx">
+              <div class="relative z-10 flex flex-col items-center group cursor-pointer" @click="step = idx + 1">
+                <div class="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center">
+                  <span x-show="step === (idx + 1)" class="absolute -inset-2 rounded-full border-2 border-accent/60 animate-pulse bg-accent/20"></span>
+                  <button type="button" class="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-extrabold text-sm md:text-base transition-all duration-300 relative z-10"
+                          :class="step > (idx + 1) ? 'bg-accent text-white shadow-md shadow-accent/20' : (step === (idx + 1) ? 'bg-accent text-white shadow-xl shadow-accent/40 scale-105' : 'bg-white dark:bg-zinc-900 border-2 border-zinc-300 dark:border-zinc-800 text-zinc-400 dark:text-zinc-500 hover:border-accent/60 hover:text-accent')">
+                    <span x-text="st.num"></span>
+                  </button>
+                </div>
+                <span class="mt-3.5 md:mt-4 text-xs md:text-sm font-semibold tracking-tight transition-colors hidden sm:block whitespace-nowrap text-center"
+                      :class="step === (idx + 1) ? 'text-accent font-bold' : (step > (idx + 1) ? 'text-zinc-800 dark:text-zinc-200' : 'text-zinc-400 dark:text-zinc-600')"
+                      x-text="st.name">
+                </span>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <!-- ═══ ACTIVE STEP CONTENT (CLEAN, OPEN SEAMLESS HOMEPAGE 12-COL LAYOUT) ═══ -->
+        <div class="relative min-h-[420px]">
+          <template x-for="(st, idx) in current.steps" :key="idx">
+            <div x-show="step === (idx + 1)"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 translate-y-2"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              <!-- Left Content (col-span-7) -->
+              <div class="lg:col-span-7">
+                <div>
+                  <span class="text-xs font-bold text-accent tracking-wider uppercase" x-text="st.phaseTag"></span>
+                  <h3 class="font-display font-bold text-2xl md:text-3xl text-zinc-900 dark:text-white mt-1 mb-2" x-text="st.heading"></h3>
+                  <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" x-text="st.desc"></p>
+                </div>
+
+                <!-- Action Points List (Numbered Cards Matching Homepage) -->
+                <div class="space-y-3 mt-5">
+                  <template x-for="(point, pIdx) in st.points" :key="pIdx">
+                    <div class="flex items-start gap-3.5 p-3.5 bg-zinc-50 dark:bg-zinc-900/90 rounded-xl border border-zinc-200/80 dark:border-zinc-800">
+                      <span class="w-6 h-6 rounded-full bg-orange-100 dark:bg-accent/20 text-accent font-bold text-xs flex items-center justify-center shrink-0 mt-0.5" x-text="pIdx + 1"></span>
+                      <div>
+                        <h4 class="text-sm font-bold text-zinc-900 dark:text-white" x-text="point.title"></h4>
+                        <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5 leading-relaxed" x-text="point.desc"></p>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+
+              <!-- Right Image (col-span-5) -->
+              <div class="lg:col-span-5">
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800">
+                  <img :src="st.image" :alt="st.heading" class="w-full h-80 md:h-[370px] object-cover">
+                </div>
+              </div>
+
+            </div>
+          </template>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 4. BOTTOM CTA SECTION ═══ -->
+    <section class="py-20 bg-zinc-50 dark:bg-zinc-900/40">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <p class="text-xs font-semibold text-accent tracking-widest uppercase mb-3">Ready to Collaborate?</p>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-white mb-6">
+          Let's Build Something Reliable Together
+        </h2>
+        <p class="text-zinc-600 dark:text-zinc-400 text-sm md:text-base max-w-xl mx-auto mb-8">
+          Whether you need ongoing monthly maintenance, immediate bug fixes, or a full-stack web platform, I'm here to ensure your web infrastructure stays fast, secure, and reliable.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="index.html#contact" class="shimmer inline-flex items-center gap-2 bg-accent text-white font-display font-bold text-sm px-8 py-4 rounded-full hover:bg-accent-light transition-colors shadow-lg shadow-accent/25">
+            Get in Touch With Arbaz →
+          </a>
+          <a href="index.html#services" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium text-sm px-7 py-4 rounded-full hover:bg-white dark:hover:bg-zinc-900 transition-colors">
+            View All Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="border-t border-zinc-100 dark:border-zinc-900 py-8 bg-white dark:bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-zinc-400">© <span id="yr"></span> Arbaz Khan. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-xs text-zinc-500">
+        <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+        <a href="index.html#services" class="hover:text-accent transition-colors">Services</a>
+        <a href="index.html#work" class="hover:text-accent transition-colors">Work</a>
+        <a href="index.html#contact" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
