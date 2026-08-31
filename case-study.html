@@ -7,16 +7,17 @@
   activeProjId: new URLSearchParams(window.location.search).get('project') || 'movins',
   activeGalleryImg: 0,
   allProjectSlugs: [
-    { id: 'movins', name: 'Movins Delivery App', tag: 'Mobile & GPS' },
-    { id: 'cars-and-vans-uk', name: 'Cars & Vans UK', tag: 'Automotive & CRM' },
-    { id: 'daily-insi', name: 'Daily Insi', tag: 'Digital CMS' },
     { id: 'laptop-harbor', name: 'Laptop Harbor', tag: 'E-Commerce ERP' },
+    { id: 'cars-and-vans-uk', name: 'Cars & Vans UK', tag: 'Automotive & CRM' },
+    { id: 'movins', name: 'Movins Delivery App', tag: 'Mobile & GPS' },
+    { id: 'influencex-pr', name: 'InfluenceX PR', tag: 'WordPress & Agency' },
+    { id: 'daily-insi', name: 'Daily Insi', tag: 'Digital CMS' },
     { id: 'any2convert', name: 'Any2Convert', tag: 'Tools & OCR' },
     { id: 'food-for-nought', name: 'Food For Nought', tag: 'Charity NGO' }
   ],
   projectsData: {
     'movins': {
-      title: 'Movins — Courier & On-Demand Delivery Mobile App',
+      title: 'Movins: Courier & On-Demand Delivery Mobile App',
       badge: 'Mobile App & Logistics',
       category: 'Mobile & Apps',
       tags: ['Cross-Platform Mobile', 'Courier Logistics', 'Live GPS Tracking', 'REST API', 'Real-Time Sync'],
@@ -53,7 +54,7 @@
       outcome: 'The platform successfully launched with rave reviews from both drivers and shippers. Dispatch response latency was cut to under 10 seconds, with 99.8% GPS sync stability and zero package reconciliation errors.'
     },
     'cars-and-vans-uk': {
-      title: 'Cars and Vans UK — Dealership CRM & Automotive Showcase',
+      title: 'Cars and Vans UK: Dealership CRM & Automotive Showcase',
       badge: 'UK Dealership CRM & Platform',
       category: 'Automotive & CRM',
       tags: ['Dealership CRM', 'Sales Pipeline', 'HP/PCP Finance Engine', 'Digital Signatures', 'Vehicle Master DB'],
@@ -95,8 +96,48 @@
       ],
       outcome: 'The CRM transformed dealership operations: sales reps closed deals 50% faster, finance paperwork became 100% paperless, and overall online lead conversions rose by 65% in the first quarter.'
     },
+    'influencex-pr': {
+      title: 'InfluenceX PR: WordPress Digital Marketing & PR Agency Website',
+      badge: 'WordPress & Agency Platform',
+      category: 'Websites & CMS',
+      tags: ['WordPress Custom Theme', 'PR & Influencer Agency', 'Responsive UI', 'SEO Optimized', 'Lead Funnel'],
+      dateRange: '2024 · 4 weeks',
+      tagline: 'Modern high-converting WordPress website engineered for a digital PR and influencer marketing agency, featuring custom campaign showcases, press kit downloads, and seamless lead capture.',
+      client: 'InfluenceX PR Agency',
+      industry: 'Digital Marketing & Public Relations',
+      location: 'United Kingdom / Global',
+      role: 'Lead WordPress Developer & UI Designer',
+      timeline: '2024 (4 Weeks)',
+      deliverables: 'Custom WordPress Theme, Campaign Showcase Portfolios, Interactive Lead Forms, Speed & SEO Optimization',
+      stack: ['WordPress', 'PHP', 'Custom ACF Blocks', 'Tailwind / CSS3', 'JavaScript', 'Contact Form 7 / Webhooks', 'Yoast SEO'],
+      heroImg: 'picture/influencex/hero.png',
+      gallery: [
+        'picture/influencex/hero.png',
+        'picture/influencex/book.png',
+        'picture/influencex/mid.png',
+        'picture/influencex/mid2.png',
+        'picture/influencex/end.png'
+      ],
+      stats: [
+        { val: '95+', label: 'Google PageSpeed score', highlight: true, sub: 'Optimized asset loading' },
+        { val: '+45%', label: 'Inbound lead conversion', sub: 'Strategic CTA placements' },
+        { val: '<1.5s', label: 'Page load time', sub: 'Clean lightweight code' },
+        { val: '100%', label: 'Mobile responsiveness', sub: 'Flawless on all screens' }
+      ],
+      overview: 'InfluenceX PR is a premier digital public relations and influencer marketing agency. I designed and developed a bespoke WordPress website to establish a strong brand identity, showcase high-profile influencer campaigns, and capture high-value enterprise client inquiries.',
+      challenge: 'The client needed a modern, ultra-fast agency website that could handle high-resolution campaign media without sluggish load times, while allowing non-technical marketing managers to easily publish new press releases and case studies.',
+      solutionHeading: 'Bespoke WordPress Architecture with Modular Campaign Blocks',
+      solution: 'I developed a lightweight custom WordPress theme using structured custom fields and modular blocks. Media assets are lazy-loaded in WebP format, inquiry forms are connected directly to CRM webhooks, and the entire layout is fine-tuned for high conversion and search engine discoverability.',
+      keyPoints: [
+        { title: 'Bespoke Agency Design & Branding', desc: 'Sleek, high-impact aesthetic crafted specifically for influencer marketing and media credibility.' },
+        { title: 'Dynamic Campaign & Portfolio Hub', desc: 'Visual case study layouts allowing the team to display campaign reach, client rosters, and media coverage.' },
+        { title: 'High-Converting Lead Funnel', desc: 'Strategic booking call-to-actions, inquiry capture forms, and automated email notifications.' },
+        { title: 'Speed & SEO Optimization', desc: 'Clean semantic HTML5 structure, schema markup, and aggressive caching achieving 95+ PageSpeed scores.' }
+      ],
+      outcome: 'The website launched successfully, driving a 45% increase in qualified consultation bookings and giving the agency a polished, credible online presence that stands out in the PR industry.'
+    },
     'daily-insi': {
-      title: 'Daily Insi — Digital Media & Editorial Publishing Platform',
+      title: 'Daily Insi: Digital Media & Editorial Publishing Platform',
       badge: 'Media & Publishing',
       category: 'Digital Publishing',
       tags: ['Editorial CMS', 'Digital News', 'Core Web Vitals', 'Schema.org SEO', 'High Speed'],
@@ -132,7 +173,7 @@
       outcome: 'Daily Insi achieved a 98/100 PageSpeed score, driving an 85% growth in organic Google search impressions within 90 days of release.'
     },
     'laptop-harbor': {
-      title: 'Laptop Harbor — E-Commerce Laptop Selling App',
+      title: 'Laptop Harbor: E-Commerce Laptop Selling App',
       badge: 'E-Commerce App & Admin Panel',
       category: 'E-Commerce & Retail',
       tags: ['Laptop Selling App', 'Admin CRUD Panel', 'User Cart & Checkout', 'Auth & Password Reset', 'Inventory Management'],
@@ -171,7 +212,7 @@
       outcome: 'Laptop Harbor launched as a modern, reliable e-commerce selling platform with streamlined order processing, effortless product management for administrators, and an intuitive shopping journey for buyers.'
     },
     'any2convert': {
-      title: 'Any2Convert — Multi-Format Online Conversion Suite',
+      title: 'Any2Convert: Multi-Format Online Conversion Suite',
       badge: 'Tools & Utilities',
       category: 'Web Utilities & Automation',
       tags: ['Online File Converter', 'OCR Text Pipeline', 'Asynchronous Queues', 'AJAX Workers', 'File Shredding'],
@@ -184,9 +225,12 @@
       timeline: '2023–2024',
       deliverables: 'Multi-Format Transformation Engine, Tesseract OCR Pipeline, Background Queue Workers, Ephemeral Storage Cleaner',
       stack: ['PHP Core / CLI', 'Tesseract OCR', 'ImageMagick (Imagick)', 'Ghostscript', 'AJAX Queue Workers', 'Cron Automation'],
-      heroImg: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80',
+      heroImg: 'picture/any2convert/main.png',
       gallery: [
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80'
+        'picture/any2convert/main.png',
+        'picture/any2convert/tools.png',
+        'picture/any2convert/tools2.png',
+        'picture/any2convert/footer.png'
       ],
       stats: [
         { val: '10,000+', label: 'Daily conversions', highlight: true, sub: 'Zero bottleneck lag' },
@@ -207,7 +251,7 @@
       outcome: 'The platform handles more than 10,000 daily transformations reliably with sub-3-second average completion times and zero browser timeout errors.'
     },
     'food-for-nought': {
-      title: 'Food For Nought — Community Food Rescue Platform',
+      title: 'Food For Nought: Community Food Rescue Platform',
       badge: 'Charity & NGO',
       category: 'Community & Non-Profit',
       tags: ['Charity Web Portal', 'Volunteer Coordination', 'Food Rescue Logistics', 'Impact Metrics', 'Mobile First'],
@@ -220,9 +264,9 @@
       timeline: '2023 (6 Weeks)',
       deliverables: 'Charity Web Portal, Rescue Logistics Tracker, Volunteer Sign-Up Flow, Impact Dashboard',
       stack: ['PHP / Laravel', 'Tailwind CSS', 'Alpine.js', 'MySQL', 'Accessible UI (WCAG AA)', 'Automated Email Dispatch'],
-      heroImg: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1400&q=80',
+      heroImg: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1400&q=80',
       gallery: [
-        'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1400&q=80'
+        'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1400&q=80'
       ],
       stats: [
         { val: '500+', label: 'Tonnes of food rescued', highlight: true, sub: 'Tracked & redistributed' },
