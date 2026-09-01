@@ -22,7 +22,7 @@
       category: 'Mobile & Apps',
       tags: ['Cross-Platform Mobile', 'Courier Logistics', 'Live GPS Tracking', 'REST API', 'Real-Time Sync'],
       dateRange: '2024 · 10 weeks',
-      tagline: 'An on-demand courier and parcel delivery mobile application featuring sub-10 second proximity driver dispatch, real-time GPS parcel tracking, and end-to-end booking workflows.',
+      tagline: 'An on-demand courier and package delivery mobile app with live GPS tracking, fast driver matching, and simple in-app booking.',
       client: 'Movins Logistics App',
       industry: 'Logistics & Transportation',
       location: 'United Kingdom',
@@ -35,23 +35,23 @@
         'picture/movins.png'
       ],
       stats: [
-        { val: '<10s', label: 'Driver dispatch latency', sub: 'Instant nearby matching' },
-        { val: '99.8%', label: 'GPS tracking uptime', highlight: true, sub: 'Real-time telemetry' },
-        { val: '4.8 / 5', label: 'Driver & user rating', sub: 'High user satisfaction' },
+        { val: '<10s', label: 'Driver dispatch latency', sub: 'Fast nearby matching' },
+        { val: '99.8%', label: 'GPS tracking uptime', highlight: true, sub: 'Stable live tracking' },
+        { val: '4.8 / 5', label: 'Driver & user rating', sub: 'Positive feedback' },
         { val: 'Zero', label: 'Lost package incidents', sub: 'Digital proof of delivery' }
       ],
-      overview: 'Movins is a dynamic courier and package delivery mobile platform designed to connect shippers and businesses with verified courier drivers for fast, on-demand parcel dispatch, real-time vehicle tracking, and automated proof of delivery.',
-      challenge: 'Managing simultaneous high-frequency GPS coordinate streams from hundreds of drivers without draining phone batteries or overwhelming the API server, while providing customers with a silky-smooth, live-moving vehicle pin on their screen.',
-      solutionHeading: 'Real-Time Driver Dispatch Engine & Battery-Optimized GPS Telemetry',
-      solution: 'I architected a high-throughput mobile application with an asynchronous backend queue. Courier location updates are batched and broadcast via lightweight WebSockets. The dispatch algorithm calculates radial distances to notify the nearest drivers instantly, while the client app provides interactive map navigation with turn-by-turn route tracking.',
+      overview: 'Movins connects customers with nearby courier drivers for quick parcel delivery, live route tracking on a map, and digital delivery confirmations.',
+      challenge: 'Handling continuous GPS updates from multiple drivers in real time without draining device batteries or slowing down the server.',
+      solutionHeading: 'Live Driver Dispatch & Battery-Efficient GPS Tracking',
+      solution: 'I built the mobile app and backend dispatch logic using WebSockets and background queues. The system finds the closest available drivers based on radius and gives users a smooth live map view of their driver route.',
       keyPoints: [
-        { title: 'Interactive Live Map & Real-Time Tracking', desc: 'Smooth GPS pin interpolation showing driver movement, remaining travel distance, and precise estimated arrival time (ETA).' },
-        { title: 'Smart Proximity Driver Dispatch Engine', desc: 'Radial geofencing algorithm that routes incoming deliveries to the closest verified drivers, slashing wait times to under 10 seconds.' },
-        { title: '3-Step Streamlined Booking Workflow', desc: 'Frictionless customer booking flow with automated instant pricing calculations based on package dimensions, weight, and travel distance.' },
-        { title: 'Digital Proof of Delivery (e-POD)', desc: 'In-app recipient signature capture, photo upload on drop-off, and automated digital PDF receipt generation.' },
-        { title: 'Automated Push Notifications', desc: 'Real-time milestone notifications at every stage: Driver Assigned, Parcel Picked Up, Approaching Destination, and Delivered.' }
+        { title: 'Live Map & Route Tracking', desc: 'Real-time map view showing driver location, remaining distance, and accurate estimated arrival time.' },
+        { title: 'Proximity Driver Dispatch', desc: 'Matching logic that routes delivery requests to the closest available drivers to minimize wait times.' },
+        { title: 'Simple Booking Flow', desc: 'Quick 3-step booking with instant price calculation based on parcel size, weight, and distance.' },
+        { title: 'Digital Proof of Delivery', desc: 'Recipient signature capture, drop-off photo upload, and instant receipt generation.' },
+        { title: 'Status Updates & Notifications', desc: 'Clear updates at every step: driver assigned, package picked up, on the way, and delivered.' }
       ],
-      outcome: 'The platform successfully launched with rave reviews from both drivers and shippers. Dispatch response latency was cut to under 10 seconds, with 99.8% GPS sync stability and zero package reconciliation errors.'
+      outcome: 'The app launched smoothly for drivers and customers, keeping GPS tracking stable and eliminating package tracking mix-ups.'
     },
     'cars-and-vans-uk': {
       title: 'Cars and Vans UK: Dealership CRM & Automotive Showcase',
@@ -59,7 +59,7 @@
       category: 'Automotive & CRM',
       tags: ['Dealership CRM', 'Sales Pipeline', 'HP/PCP Finance Engine', 'Digital Signatures', 'Vehicle Master DB'],
       dateRange: '2025 · 8 weeks',
-      tagline: 'Comprehensive UK Dealership CRM and vehicle showcase platform featuring visual sales pipeline, multi-scheme finance calculators (HP, PCP, Lease), e-signatures, document vault, and automated invoicing.',
+      tagline: 'A complete UK dealership CRM and showroom website with visual sales pipelines, finance payment calculators, e-signatures, and inventory tracking.',
       client: 'Cars and Vans UK',
       industry: 'Automotive Dealership & Finance',
       location: 'United Kingdom',
@@ -77,24 +77,24 @@
         'picture/cvextras/landing_lcoation_white.png'
       ],
       stats: [
-        { val: '+65%', label: 'Lead capture conversion', highlight: true, sub: 'Optimized inquiry funnel' },
-        { val: '−50%', label: 'Inquiry response latency', sub: 'Instant dealer alerts' },
+        { val: '+65%', label: 'Lead capture conversion', highlight: true, sub: 'Clear inquiry forms' },
+        { val: '−50%', label: 'Inquiry response latency', sub: 'Direct staff alerts' },
         { val: '100%', label: 'Live stock sync accuracy', sub: 'Zero duplicate listings' },
-        { val: '4.9 / 5', label: 'Dealer staff satisfaction', sub: 'Intuitive back-office UI' }
+        { val: '4.9 / 5', label: 'Dealer staff satisfaction', sub: 'Simple back-office UI' }
       ],
-      overview: 'Cars and Vans UK is a UK-based automotive dealership. I designed and engineered a custom back-office Dealership CRM paired with a front-end vehicle showcase to completely streamline lead pipelines, stock management, FCA-compliant finance calculations, and legally binding digital signatures.',
-      challenge: 'Automotive sales involve complex multi-tiered financing options (HP, PCP, Lease), stringent FCA compliance requirements, and high lead drop-offs when paperwork is handled manually across disparate spreadsheets.',
-      solutionHeading: 'Integrated Dealership CRM Architecture & Finance Calculation Engine',
-      solution: 'I built a comprehensive CRM encompassing visual Kanban pipelines, automated lender-tier APR calculators, paperless digital signature portals, and an automated PDF document generator for sales orders and invoices.',
+      overview: 'Cars and Vans UK needed a central platform to replace spreadsheets. I built a custom CRM paired with their vehicle showroom to manage incoming leads, calculate finance schemes (HP, PCP, Lease), and send digital contracts directly to buyers.',
+      challenge: 'Dealerships deal with complex financing rules and high customer drop-off when paperwork is handled manually across different tools.',
+      solutionHeading: 'Custom Dealership CRM with Integrated Finance & E-Signatures',
+      solution: 'I built a backend CRM with visual pipeline stages, custom finance calculation formulas, digital signature workflows, and automated PDF invoice generation.',
       keyPoints: [
-        { title: '1. Lead & Pipeline Management', desc: 'Visual Sales Pipeline across clear stages (New, In Progress, Subject to Finance, Sold, Lost), task/calendar follow-up scheduling, and centralized customer profiles.' },
-        { title: '2. Vehicle Inventory Hub (Stock Management)', desc: 'Full CRUD control over vehicle stock (Make, Model, Reg, Specs, Pricing), automated stock ageing reports (Healthy to Urgent), and real-time cash/VAT/finance price engine.' },
-        { title: '3. Finance & Compliance Engine', desc: 'Real-time calculation of monthly payments, total payable, interest, and balloon values for HP, PCP, and Lease deals with FCA-compliant lender tiers, APR ranges, and excess mileage validation.' },
-        { title: '4. End-to-End Digital Signatures', desc: 'One-click signature dispatch for Sales Orders and Finance Agreements, mobile-responsive signing portal, and automated status synchronization (Draft → Sent → Signed).' },
-        { title: '5. Compliance & Document Management', desc: 'Centralized digital vault for driver’s licenses and signed agreements, automated MOT/tax expiry tracking, and timestamped IP-logged audit trails.' },
-        { title: '6. Quotations, Invoicing & Role Control', desc: 'Instant automated PDF generation and emailing of professional Quotations and Sales Invoices, backed by a role-based self-service staff portal.' }
+        { title: '1. Lead & Pipeline Management', desc: 'Visual sales pipeline across clear stages (New, In Progress, Finance, Sold, Lost), calendar task scheduling, and centralized customer profiles.' },
+        { title: '2. Vehicle Inventory Hub', desc: 'Full inventory CRUD to manage stock details, specs, and pricing, with stock ageing alerts and live VAT breakdowns.' },
+        { title: '3. Finance & Compliance Calculator', desc: 'Real-time payment calculations for HP, PCP, and Lease options with adjustable APR, deposit, and mileage terms.' },
+        { title: '4. Digital Signatures', desc: 'Send sales orders and finance agreements directly to customer phones for instant digital signing.' },
+        { title: '5. Document Vault & Audit Trail', desc: 'Secure storage for customer IDs and signed agreements, with MOT/tax expiry alerts and timestamped records.' },
+        { title: '6. Invoices & Staff Roles', desc: 'Instant PDF generation for quotations and invoices with role-based access for dealership staff.' }
       ],
-      outcome: 'The CRM transformed dealership operations: sales reps closed deals 50% faster, finance paperwork became 100% paperless, and overall online lead conversions rose by 65% in the first quarter.'
+      outcome: 'The CRM simplified dealership daily work, cut down sales paperwork time, and helped the team respond to online inquiries much faster.'
     },
     'influencex-pr': {
       title: 'InfluenceX PR: WordPress Digital Marketing & PR Agency Website',
@@ -102,7 +102,7 @@
       category: 'Websites & CMS',
       tags: ['WordPress Theme', 'PR & Influencer Agency', 'Action Cards', 'MSN Social Proof', 'SEO Routing & 301'],
       dateRange: '2024 · 4 weeks',
-      tagline: 'Comprehensive optimization, layout architecture, high-authority MSN social proof integration, and technical SEO permalink restructuring for the InfluenceXPR agency website.',
+      tagline: 'Website optimization, contact section redesign, MSN social proof integration, and technical SEO permalink cleanup for InfluenceXPR.',
       client: 'InfluenceX PR Agency',
       industry: 'Digital Marketing & Public Relations',
       location: 'United Kingdom / Global',
@@ -119,23 +119,23 @@
         'picture/influencex/end.png'
       ],
       stats: [
-        { val: '95+', label: 'Google PageSpeed score', highlight: true, sub: 'Optimized asset loading' },
+        { val: '95+', label: 'Google PageSpeed score', highlight: true, sub: 'Clean lightweight code' },
         { val: '+45%', label: 'Inbound lead conversion', sub: 'Direct action cards' },
-        { val: '5 Profiles', label: 'MSN spotlight features', sub: 'High-authority proof' },
+        { val: '5 Profiles', label: 'MSN spotlight features', sub: 'Verified reviews' },
         { val: 'Zero', label: '404 errors on migration', sub: '301 Regex safeguards' }
       ],
-      overview: 'InfluenceX PR is a digital public relations and influencer marketing agency. I executed a comprehensive suite of UI/UX optimizations, structured high-authority MSN media spotlight proof, developed frictionless contact access, and implemented bulletproof SEO silo URL routing.',
-      challenge: 'The website suffered from slow multi-step form drop-offs, inconsistent testimonial card heights causing layout breakage, generic placeholder text, and non-standard permalinks risking SEO rank loss upon restructure.',
-      solutionHeading: 'Full-Stack WordPress Optimization, Contact Flow Architecture & SEO Siloing',
-      solution: 'I eliminated form friction by deploying direct-access action cards, balanced and standardized MSN social proof copy, normalized image ratios and Swiper flexbox height bugs, created interactive service tab switching, and enforced clean permalinks backed by Rank Math 301 regex redirects.',
+      overview: 'InfluenceX PR is a digital PR and influencer marketing agency. I worked on UI/UX fixes, replaced slow lead forms with direct contact cards, structured their MSN media reviews, and cleaned up WordPress URL routing.',
+      challenge: 'The site had form drop-offs, broken testimonial slider heights across different screen sizes, placeholder text, and outdated date-based URLs that needed safe redirection.',
+      solutionHeading: 'WordPress UI Fixes, Direct Action Cards & Technical SEO Cleanup',
+      solution: 'I redesigned the contact area with direct WhatsApp and email action cards, fixed Swiper flexbox slider height bugs, balanced testimonial copy, and configured Rank Math 301 regex redirects for clean post-name permalinks.',
       keyPoints: [
-        { title: '1. Contact Section Architecture & Direct Access', desc: 'Constructed an interactive two-column section with value propositions on the left and high-conversion action cards (direct WhatsApp chat, official inquiry email, and office location) on the right, eliminating form friction.' },
-        { title: '2. Testimonials & High-Authority MSN Social Proof', desc: 'Drafted and balanced punchy 3–4 line copy for 5 featured MSN profiles (Romaa Rajadhyaksha, Svetlana Elgart, Sophia Michael, Katherine Davis, Warren Smith), removed ElementsKit placeholders, and standardized brand spelling.' },
-        { title: '3. UI/UX & CSS Bug Fixes', desc: 'Fixed image aspect ratios with object-fit contain/cover, solved Swiper/ElementsKit equal height flexbox card bugs, and implemented -webkit-line-clamp: 4 to prevent text overflow.' },
-        { title: '4. URL Hierarchy & Service Routing', desc: 'Built nested SEO silo URL structures (/seo/service-url), configured Gutenberg page parent-child attributes, and developed a lightweight interactive tab module for seamless single-page service switching.' },
-        { title: '5. Clean Permalinks & 301 Redirection Safeguards', desc: 'Migrated date-based URLs to clean SEO post-name permalinks and formulated Rank Math 301 Regex redirect rules to prevent 404 crawl errors and protect search ranking.' }
+        { title: '1. Contact Section & Direct Access', desc: 'Built a two-column contact section with direct WhatsApp, email, and office location cards to make getting in touch quick and effortless.' },
+        { title: '2. MSN Media Social Proof', desc: 'Wrote clear 3–4 line review summaries for 5 featured MSN profiles (Romaa Rajadhyaksha, Svetlana Elgart, Sophia Michael, Katherine Davis, Warren Smith) and removed template placeholders.' },
+        { title: '3. UI/UX & CSS Layout Fixes', desc: 'Normalized image containers with object-fit, resolved Swiper/ElementsKit equal height slider bugs, and added line-clamping to prevent text overflow.' },
+        { title: '4. Service Hierarchy & Tabs', desc: 'Structured nested SEO URLs (/seo/service-url), set up Gutenberg parent-child pages, and built a lightweight tab component for service switching.' },
+        { title: '5. Clean Permalinks & 301 Redirects', desc: 'Migrated URLs to standard post-name format and added Rank Math 301 regex redirect rules to avoid broken links and keep search rankings.' }
       ],
-      outcome: 'InfluenceXPR achieved a 45% increase in incoming client inquiries through direct action channels, 100% visual symmetry across testimonial sliders, and seamless zero-404 URL hierarchy migration.'
+      outcome: 'Direct inquiries increased with the new action cards, testimonial cards aligned neatly across all devices, and the URL migration completed without 404 errors.'
     },
     'daily-insi': {
       title: 'Daily Insi: WordPress Digital Media & News Blogging Platform',
@@ -143,7 +143,7 @@
       category: 'Digital Publishing',
       tags: ['WordPress Blog', 'Digital News', 'Editorial CMS', 'Core Web Vitals', 'High Speed'],
       dateRange: '2026 · 6 weeks',
-      tagline: 'High-speed WordPress digital blogging and insights platform built for instant article publishing, dynamic category taxonomies, reader engagement, and 98+ Google PageSpeed scores.',
+      tagline: 'A fast WordPress news and blogging site built for easy publishing, clean category navigation, and high Google PageSpeed scores.',
       client: 'Daily Insi Editorial Group',
       industry: 'Digital Publishing & News',
       location: 'Global / Remote',
@@ -157,21 +157,21 @@
       ],
       stats: [
         { val: '98 / 100', label: 'Google PageSpeed score', highlight: true, sub: 'Mobile & Desktop' },
-        { val: '<1.2s', label: 'Largest contentful paint', sub: 'Sub-second rendering' },
-        { val: '+85%', label: 'Organic search impressions', sub: 'Google Discover boost' },
-        { val: '100%', label: 'Valid Schema.org markup', sub: 'Zero structured errors' }
+        { val: '<1.2s', label: 'Largest contentful paint', sub: 'Fast page rendering' },
+        { val: '+85%', label: 'Organic search impressions', sub: 'Google Discover traffic' },
+        { val: '100%', label: 'Valid Schema.org markup', sub: 'Zero schema errors' }
       ],
-      overview: 'Daily Insi is a digital media blogging platform built on WordPress, publishing analysis and breaking insights across technology, business, and current events to thousands of readers every day.',
-      challenge: 'Handling sudden traffic surges on a WordPress blogging environment without performance degradation, giving non-technical writers an effortless publishing workflow, and achieving top-tier Google Core Web Vitals to rank in Google News.',
-      solutionHeading: 'Lightweight WordPress Architecture & Automated SEO Injection',
-      solution: 'I developed a streamlined, bloat-free custom WordPress theme with automated WebP image conversion, pre-configured Redis object caching, Schema.org NewsArticle JSON-LD injection, and optimized database queries.',
+      overview: 'Daily Insi is a digital media blog built on WordPress, covering tech, business, and current events with regular daily articles.',
+      challenge: 'Keeping a content-heavy WordPress site fast during traffic spikes while making it easy for non-technical writers to draft and publish posts.',
+      solutionHeading: 'Fast WordPress Blog Setup & Schema Markup',
+      solution: 'I built a lightweight custom WordPress theme, set up caching and WebP image delivery, added Schema.org NewsArticle markup, and optimized database queries for quick page loads.',
       keyPoints: [
-        { title: 'Distraction-Free WordPress Editorial CMS', desc: 'Clean authoring dashboard with Gutenberg/WYSIWYG support, featured image focal points, and scheduled publishing.' },
-        { title: 'Green Core Web Vitals (98/100)', desc: 'Zero layout shifts (CLS < 0.01) and instant First Contentful Paint (<0.8s) for maximum reader retention.' },
-        { title: 'Automated Schema.org JSON-LD', desc: 'Dynamic structured data tags ensuring every article qualifies for Google Top Stories and Rich Snippets.' },
-        { title: 'Dynamic Topic Taxonomies', desc: 'Deep hierarchical categorization and tag indexing that keep related content interconnected.' }
+        { title: 'Clean Editorial Dashboard', desc: 'Simple Gutenberg writing setup with featured images and post scheduling.' },
+        { title: 'Fast Page Speeds (98/100)', desc: 'Lightweight code, minimal CSS, and optimized assets for quick loading on mobile and desktop.' },
+        { title: 'NewsArticle Schema Markup', desc: 'Structured data added to every post to help articles appear cleanly in Google search and news snippets.' },
+        { title: 'Topic Categories & Tags', desc: 'Organized taxonomy structure to make browsing related articles simple for readers.' }
       ],
-      outcome: 'Daily Insi achieved a 98/100 PageSpeed score, driving an 85% growth in organic Google search impressions within 90 days of release.'
+      outcome: 'The site achieved a 98/100 Google PageSpeed score and saw steady growth in search impressions thanks to clean code and fast load times.'
     },
     'laptop-harbor': {
       title: 'Laptop Harbor: E-Commerce Laptop Selling App',
@@ -179,7 +179,7 @@
       category: 'E-Commerce & Retail',
       tags: ['Laptop Selling App', 'Admin CRUD Panel', 'User Cart & Checkout', 'Auth & Password Reset', 'Inventory Management'],
       dateRange: '2025 · 8 weeks',
-      tagline: 'Full-featured e-commerce laptop selling web application with full admin CRUD control, user shopping cart/checkout, secure authentication with forgot-password recovery, and efficient inventory management.',
+      tagline: 'An e-commerce laptop store with a full admin dashboard for inventory and a smooth shopping cart and checkout for buyers.',
       client: 'Laptop Harbor Retail',
       industry: 'Consumer Electronics & E-Commerce',
       location: 'Regional Retail',
@@ -196,21 +196,21 @@
       ],
       stats: [
         { val: '100%', label: 'Inventory sync accuracy', sub: 'Zero overselling' },
-        { val: '−60%', label: 'Order fulfillment time', highlight: true, sub: 'Automated workflow' },
-        { val: '<250ms', label: 'Catalog search speed', sub: 'Optimized SQL indices' },
+        { val: '−60%', label: 'Order fulfillment time', highlight: true, sub: 'Simple order workflow' },
+        { val: '<250ms', label: 'Catalog search speed', sub: 'Fast database queries' },
         { val: '100%', label: 'Secure authentication', sub: 'Password reset & sessions' }
       ],
-      overview: 'This e-commerce app features a full admin panel to add, update, and delete products, and a user panel with product browsing, cart, and checkout. It includes forgot password functionality, secure authentication, and a smooth, responsive interface for seamless shopping and efficient inventory management.',
-      challenge: 'Creating a seamless shopping experience where customers can quickly filter laptops by specifications, securely manage their accounts, and checkout, while giving administrative staff an intuitive CRUD interface to manage stock, pricing, and variants effortlessly.',
-      solutionHeading: 'Robust E-Commerce Architecture with Dual Admin & Customer Portals',
-      solution: 'I developed a modular web application with dual access layers: a public storefront featuring real-time cart state management and checkout, and a secure back-office admin dashboard providing full CRUD control over the entire laptop product catalog and inventory counts.',
+      overview: 'This e-commerce web app has an admin panel to add, update, and remove products, alongside a user storefront with product filters, shopping cart, checkout, password reset, and inventory updates.',
+      challenge: 'Building a clean catalog where buyers can filter laptops easily by specs, while giving the store owner a simple admin tool to update prices and stock levels.',
+      solutionHeading: 'E-Commerce Storefront with Admin CRUD & Inventory Sync',
+      solution: 'I built the application with two interfaces: a customer-facing shop with real-time cart state and secure checkout, and a password-protected admin dashboard for managing products and stock.',
       keyPoints: [
-        { title: 'Full Admin Control Panel (CRUD)', desc: 'Complete administrative capability to add, update, delete, and manage laptop products, specifications, images, and prices in real-time.' },
-        { title: 'User Shopping & Catalog Browsing', desc: 'Smooth, responsive user interface with dynamic catalog browsing, specification filtering, real-time shopping cart, and frictionless checkout.' },
-        { title: 'Secure Authentication & Password Recovery', desc: 'Protected user registration, login, and robust forgot password reset functionality with encrypted token verification.' },
-        { title: 'Automated Inventory & Stock Tracking', desc: 'Real-time stock decrementing upon successful order completion to prevent overselling and maintain accurate warehouse balances.' }
+        { title: 'Admin Product Management (CRUD)', desc: 'Store owners can easily add, edit, or delete laptop listings, specs, images, and prices in real time.' },
+        { title: 'Storefront, Cart & Checkout', desc: 'Clean product catalog with spec filters, quick search, shopping cart management, and straightforward checkout.' },
+        { title: 'User Accounts & Password Reset', desc: 'Secure user registration, login, and email-based password recovery.' },
+        { title: 'Inventory Tracking', desc: 'Stock counts update automatically when an order is placed to keep inventory accurate.' }
       ],
-      outcome: 'Laptop Harbor launched as a modern, reliable e-commerce selling platform with streamlined order processing, effortless product management for administrators, and an intuitive shopping journey for buyers.'
+      outcome: 'Laptop Harbor launched as a clean, easy-to-use laptop store that simplified catalog management for the owner and shopping for buyers.'
     },
     'any2convert': {
       title: 'Any2Convert: Multi-Format Online Conversion Suite',
@@ -218,7 +218,7 @@
       category: 'Web Utilities & Automation',
       tags: ['Online File Converter', 'OCR Text Pipeline', 'Asynchronous Queues', 'AJAX Workers', 'File Shredding'],
       dateRange: '2026 · 8 weeks',
-      tagline: 'Web-based online conversion platform supporting multi-format document and media transformations, OCR text processing, and asynchronous task execution without server latency.',
+      tagline: 'An online file conversion tool that converts documents, images, and text formats directly in the browser with background OCR processing.',
       client: 'Any2Convert Web Utilities',
       industry: 'Online Utilities & SaaS',
       location: 'Global Web',
@@ -234,22 +234,22 @@
         'picture/any2convert/footer.png'
       ],
       stats: [
-        { val: '10,000+', label: 'Daily conversions', highlight: true, sub: 'Zero bottleneck lag' },
+        { val: '10,000+', label: 'Daily conversions', highlight: true, sub: 'Handles high traffic' },
         { val: '<3.0s', label: 'Average conversion time', sub: 'Parallel background workers' },
-        { val: '99.9%', label: 'Queue execution success', sub: 'Automated retry logic' },
-        { val: '100%', label: 'Privacy & data shredding', sub: 'Automated file purging' }
+        { val: '99.9%', label: 'Queue execution success', sub: 'Automatic retry handling' },
+        { val: '100%', label: 'Privacy & data cleanup', sub: 'Automatic file deletion' }
       ],
-      overview: 'Any2Convert (any2convert.com) is an online utility that empowers users worldwide to convert documents, images, and text formats directly inside their web browsers.',
-      challenge: 'Heavy file transformations (PDF rendering, raster conversions, OCR scans) are CPU-intensive and can lock up web servers or timeout browser sessions during peak concurrent traffic.',
-      solutionHeading: 'Asynchronous Worker Queue & Secure Ephemeral Pipelines',
-      solution: 'I separated the web frontend from the heavy transformation engine. Uploaded files receive a unique job token and are processed in isolated background worker threads via Tesseract OCR and Imagick. Real-time progress is communicated via AJAX polling, followed by automatic file shredding after download.',
+      overview: 'Any2Convert (any2convert.com) is a web-based tool for converting files between different formats like PDF, Word, and images, with OCR text extraction from scanned documents.',
+      challenge: 'Heavy conversions like OCR and PDF rendering can freeze web pages or time out when multiple users upload files at the same time.',
+      solutionHeading: 'Background Conversion Workers & Automatic File Cleanup',
+      solution: 'I set up background worker queues to process heavy OCR and image conversions asynchronously. Users see an animated progress bar via AJAX, and temporary files are automatically deleted after download.',
       keyPoints: [
-        { title: 'Multi-Format File Engine', desc: 'Lossless conversions between PDF, DOCX, PNG, JPG, WebP, and raw text formats.' },
-        { title: 'Tesseract OCR Text Extraction', desc: 'Precision optical character recognition extracting editable text from scanned documents and receipts.' },
-        { title: 'Non-Blocking AJAX Job Queue', desc: 'Keeps the browser interface responsive with animated progress bars during multi-file batch conversions.' },
-        { title: 'Automated Ephemeral Data Purging', desc: 'Cron jobs securely wipe temporary uploaded and converted files after 30 minutes for user privacy.' }
+        { title: 'Multi-Format Conversion', desc: 'Converts between PDF, Word, PNG, JPG, WebP, and plain text without losing quality.' },
+        { title: 'OCR Text Extraction', desc: 'Extracts readable, editable text from scanned documents and images using Tesseract OCR.' },
+        { title: 'Background Queue with Progress', desc: 'Files process in the background without freezing the browser, showing clear progress indicators.' },
+        { title: 'Automatic File Deletion', desc: 'Scheduled cleanup jobs delete temporary uploaded files after 30 minutes to protect user privacy.' }
       ],
-      outcome: 'The platform handles more than 10,000 daily transformations reliably with sub-3-second average completion times and zero browser timeout errors.'
+      outcome: 'The tool processes thousands of conversions daily with fast response times and zero server crashes.'
     },
     'food-for-nought': {
       title: 'FoodForNought: Food Resource Management System',
@@ -257,7 +257,7 @@
       category: 'Community & Non-Profit',
       tags: ['CodeIgniter', 'PHP & MySQL', 'Geo-Location API', 'jQuery & AJAX', 'Resource Management'],
       dateRange: '2024 · 6 weeks',
-      tagline: 'Centralized food resource management platform engineered with CodeIgniter and PHP to reduce food wastage through geolocation tracking and workflow automation.',
+      tagline: 'A food resource management system built with CodeIgniter and PHP to reduce food waste through location tracking and centralized coordination.',
       client: 'FoodForNought Platform',
       industry: 'Resource Management & Non-Profit',
       location: 'United Kingdom',
@@ -272,21 +272,21 @@
       stats: [
         { val: '100%', label: 'Geo-location accuracy', highlight: true, sub: 'Location-based tracking' },
         { val: '500+', label: 'Tonnes of food managed', sub: 'Centralized resource system' },
-        { val: '<200ms', label: 'AJAX endpoint latency', sub: 'Optimized CodeIgniter API' },
+        { val: '<200ms', label: 'AJAX endpoint latency', sub: 'Fast CodeIgniter endpoints' },
         { val: '100%', label: 'Spec-compliant delivery', sub: 'Documented workflows' }
       ],
-      overview: 'FoodForNought is a food resource management platform focused on helping reduce food wastage by connecting and managing food-related resources through a centralized web-based system.',
-      challenge: 'Handling complex location-based coordinate data accurately, aligning custom business workflows with documented requirements, and ensuring seamless asynchronous data flow without page reloads.',
-      solutionHeading: 'CodeIgniter Backend Development, Geo-Location Engine & AJAX Integration',
-      solution: 'As a Junior CodeIgniter Developer, I implemented core business requirements, engineered geo-location tracking workflows, managed MySQL database tables, and built dynamic JavaScript/jQuery AJAX interfaces for frictionless user operations.',
+      overview: 'FoodForNought is a food resource management platform designed to help reduce food waste by tracking and coordinating surplus food collections across locations through a central web system.',
+      challenge: 'Accurately handling location data and building customized workflows that matched the client detailed technical requirements.',
+      solutionHeading: 'CodeIgniter Backend, Geo-Location Features & AJAX UI',
+      solution: 'Working as a Junior CodeIgniter Developer, I implemented project requirements from the technical specification, built location-based workflows, managed MySQL database tables, and added dynamic jQuery/AJAX interactions.',
       keyPoints: [
-        { title: 'Geo-Location & Location-Based Workflows', desc: 'Developed and handled location-related data and geographic workflows to power core mapping and proximity resource features.' },
-        { title: 'CodeIgniter & PHP Backend Engineering', desc: 'Implemented business logic and feature requirements according to client documentation and system behavior specifications.' },
-        { title: 'MySQL Relational Data Management', desc: 'Structured and maintained MySQL database tables to store resource statuses, locations, and user activity records.' },
-        { title: 'Dynamic AJAX, jQuery & JSON Handlers', desc: 'Integrated asynchronous JSON endpoints for instant dynamic UI updates without disruptive browser reloads.' },
-        { title: 'Module Refactoring & QA Debugging', desc: 'Audited existing modules, identified workflow bottlenecks, and performed end-to-end debugging to guarantee stability.' }
+        { title: 'Geo-Location & Location Features', desc: 'Integrated coordinate handling and location-based logic to support geographic resource tracking.' },
+        { title: 'CodeIgniter & PHP Backend', desc: 'Built and updated system modules according to documented business rules and workflows.' },
+        { title: 'MySQL Data Management', desc: 'Managed relational database tables for food inventory records, pickup locations, and user roles.' },
+        { title: 'AJAX & Dynamic UI', desc: 'Used jQuery and AJAX for smooth dynamic interactions and JSON data handling without full page refreshes.' },
+        { title: 'Testing & Issue Resolution', desc: 'Tested features against requirement docs, fixed bugs, and improved existing modules for better reliability.' }
       ],
-      outcome: 'Successfully delivered the geo-location and resource management functionality on time, meeting all client specifications with high stability and smooth performance.'
+      outcome: 'Successfully built and delivered the location features and backend modules on schedule, meeting all client requirements.'
     }
   },
   get current() {
