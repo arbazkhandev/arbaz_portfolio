@@ -21,11 +21,11 @@
     })();
   </script>
 
-  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <!-- Google Fonts: PT Sans (Headings/Display) & DM Sans (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
@@ -36,14 +36,14 @@
       theme: {
         extend: {
           colors: {
-            accent: '#f97316',
-            'accent-light': '#fb923c',
-            'accent-dark': '#ea580c',
+            accent: '#FF6B2B',
+            'accent-light': '#FF8F5C',
+            'accent-dark': '#e05316',
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['Syne', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            display: ['PT Sans', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+            sans: ['DM Sans', 'sans-serif'],
           }
         }
       }
@@ -63,6 +63,76 @@
     html.dark {
       color-scheme: dark;
       background-color: #09090b;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'PT Sans', sans-serif;
+    }
+
+    body {
+      transition: background-color .3s, color .3s;
+    }
+
+    /* noise overlay matching index.html */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .35;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+    }
+
+    /* scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #FF6B2B;
+      border-radius: 99px;
+    }
+
+    /* nav underline animation matching index.html */
+    .nl {
+      position: relative;
+    }
+
+    .nl::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: #FF6B2B;
+      transition: width .2s ease;
+    }
+
+    .nl:hover::after,
+    .nl.on::after {
+      width: 100%;
     }
 
     .shimmer {
@@ -135,13 +205,14 @@
 
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased font-sans"
   x-data="{
-    dark: localStorage.getItem('dark') === 'true' || (localStorage.getItem('dark') === null && window.matchMedia('(prefers-color-scheme: dark)').matches),
+    dark: localStorage.getItem('theme') === 'dark' || localStorage.getItem('dark') === 'true' || ((localStorage.getItem('theme') === null && localStorage.getItem('dark') === null) && window.matchMedia('(prefers-color-scheme: dark)').matches) || true,
     mobileMenu: false,
     sc: false,
     init() {
       if (this.dark) document.documentElement.classList.add('dark');
       else document.documentElement.classList.remove('dark');
       this.$watch('dark', val => {
+        localStorage.setItem('theme', val ? 'dark' : 'light');
         localStorage.setItem('dark', val);
         if (val) document.documentElement.classList.add('dark');
         else document.documentElement.classList.remove('dark');
@@ -155,22 +226,24 @@
     :class="sc ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5' : ''">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
       
-      <a href="index.html" class="font-display font-bold text-xl tracking-tight z-10">
+      <a href="index.html" class="font-display font-bold text-xl tracking-tight relative z-10">
         <span class="text-zinc-900 dark:text-white">arbaz</span><span class="text-accent">khan</span>
       </a>
 
-      <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
-        <li><a href="index.html" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Home</a></li>
-        <li><a href="about.html" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="projects.html" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Projects</a></li>
-        <li><a href="blog.html" class="text-accent font-semibold">Blog</a></li>
-        <li><a href="index.html#contact" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+      <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
+        <li><a href="index.html#services" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
+        <li><a href="index.html#workflow" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Process</a></li>
+        <li><a href="index.html#work" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
+        <li><a href="about.html" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#reviews" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Reviews</a></li>
+        <li><a href="blog.html" class="nl on !text-zinc-900 dark:!text-white font-medium">Blog</a></li>
+        <li><a href="index.html#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
 
       <div class="flex items-center gap-3">
         <!-- Dark Mode Toggle -->
         <button @click="dark = !dark"
-          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
           :aria-label="dark ? 'Light mode' : 'Dark mode'">
           <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -185,7 +258,10 @@
         <!-- CTA Button -->
         <a href="index.html#contact"
           class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          Hire Me →
+          Hire me
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </a>
 
         <!-- Mobile Hamburger -->
@@ -209,11 +285,17 @@
       x-transition:leave-end="opacity-0 -translate-y-2"
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
-        <li><a href="index.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Home</a></li>
-        <li><a href="about.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
-        <li><a href="projects.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Projects</a></li>
+        <li><a href="index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Services</a></li>
+        <li><a href="index.html#workflow" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Process</a></li>
+        <li><a href="index.html#work" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
+        <li><a href="about.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
+        <li><a href="index.html#reviews" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Reviews</a></li>
         <li><a href="blog.html" @click="mobileMenu=false" class="block text-accent font-semibold">Blog</a></li>
-        <li><a href="index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
+        <li><a href="index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
+        <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
+          <a href="index.html#contact" @click="mobileMenu=false"
+            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hire me →</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -637,6 +719,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- Start of Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6a96dcab4bf4e4344960a653/1k1ekrvlb';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!-- End of Tawk.to Script -->
 
 </body>
 
