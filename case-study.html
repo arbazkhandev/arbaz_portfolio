@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" x-data="{
-  dark: localStorage.getItem('theme') === 'dark',
+  dark: (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches) || document.documentElement.classList.contains('dark')),
   scrolled: false,
   mobileMenu: false,
   progress: 0,
@@ -301,7 +301,14 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }" :class="{'dark':dark}" x-init="
-  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  $watch('dark', v => {
+    localStorage.setItem('theme', v ? 'dark' : 'light');
+    if (v) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  });
   window.addEventListener('scroll', () => {
     scrolled = window.scrollY > 20;
     progress = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
@@ -309,6 +316,17 @@
 " class="scroll-smooth">
 <head>
   <meta charset="UTF-8"/>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark) || !saved) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Project case study by Arbaz Khan — software engineering, ERPs, CRM platforms, mobile applications, and full-stack solutions."/>
   <meta name="author" content="Arbaz Khan"/>
@@ -330,11 +348,18 @@
     }
   </script>
   <style>
+    html.dark {
+      color-scheme: dark;
+      background-color: #09090b;
+    }
+    html:not(.dark) {
+      color-scheme: light;
+      background-color: #ffffff;
+    }
     *,*::before,*::after{box-sizing:border-box;}
     html{font-family:'DM Sans',sans-serif;}
     h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif;}
     ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#FF6B2B;border-radius:99px;}
-    body{transition:background-color .3s,color .3s;}
     body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
     .nav-link{position:relative;}
     .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .25s cubic-bezier(.4,0,.2,1);}
@@ -356,9 +381,8 @@
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="scrolled ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5 border-b border-zinc-100 dark:border-zinc-900' : 'bg-transparent'">
     <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 group">
-        <span class="w-8 h-8 rounded-full bg-accent text-white font-display font-bold flex items-center justify-center text-sm shadow-md shadow-accent/30 group-hover:scale-105 transition-transform">A</span>
-        <span class="font-display font-bold text-lg tracking-tight text-zinc-900 dark:text-white group-hover:text-accent transition-colors">Arbaz Khan</span>
+      <a href="index.html" class="font-display font-bold text-xl tracking-tight z-10">
+        <span class="text-zinc-900 dark:text-white">arbaz</span><span class="text-accent">khan</span>
       </a>
 
       <!-- Desktop Links -->
