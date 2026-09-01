@@ -254,9 +254,8 @@
         <li><a href="#work"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Work</a></li>
-        <li><a href="#meet"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='meet'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
+        <li><a href="about.html"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
         <li><a href="#reviews"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Reviews</a></li>
@@ -316,7 +315,7 @@
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Process</a></li>
         <li><a href="#work" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
-        <li><a href="#meet" @click="mm=false"
+        <li><a href="about.html" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
         <li><a href="#reviews" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Reviews</a></li>
@@ -1619,8 +1618,8 @@
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" alt="Dale Spare" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                DS
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Dale Spare</p>
@@ -1647,8 +1646,8 @@
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Touqeer" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                T
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Touqeer</p>
@@ -1675,8 +1674,8 @@
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80" alt="Yeriv" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                Y
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Yeriv</p>
@@ -1696,19 +1695,19 @@
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">E-Commerce ERP</span>
+                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Web Platform</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz developed our complete laptop store with product CRUD, real-time cart handling, and secure checkout. Stock sync and price updates are totally seamless. Highly recommended for full-stack web builds."
+                "Arbaz developed our complete web platform with robust CRUD capabilities, smooth cart handling, and secure checkout flows. Inventory syncing and updates work effortlessly. Outstanding developer to work with."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80" alt="Sarah Müller" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                SM
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Sarah Müller</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Manager, Laptop Harbor</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Lead</p>
               </div>
             </footer>
           </blockquote>
@@ -1724,19 +1723,19 @@
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Mobile &amp; GPS</span>
+                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Real-Time Systems</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "The live courier tracking and driver dispatch engine Arbaz engineered performs flawlessly under real-time load. His database structure and clean REST endpoints made our app deployment hassle-free."
+                "The live dispatch engine and real-time tracking dashboard Arbaz engineered perform flawlessly under load. His clean database structure and rock-solid REST APIs made integration a breeze."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80" alt="Marcus Bennett" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                MB
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Marcus Bennett</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Director, Movins Logistics</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Director</p>
               </div>
             </footer>
           </blockquote>
@@ -1752,19 +1751,19 @@
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP &amp; CodeIgniter</span>
+                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP &amp; MySQL</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz brought strong technical problem-solving to our CodeIgniter and MySQL codebase. He structured the geolocation lookup, automated food collection routines, and delivered a clean, intuitive platform on schedule."
+                "Arbaz brought strong technical problem-solving to our PHP and MySQL architecture. He structured our geolocation routines, automated recurring tasks, and delivered a clean, scalable platform on schedule."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80" alt="Daniel Evans" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                DE
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Daniel Evans</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">Technical Director, Food Resource Initiative</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Technical Director</p>
               </div>
             </footer>
           </blockquote>
@@ -1789,8 +1788,8 @@
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" alt="Dale Spare" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                DS
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Dale Spare</p>
@@ -1817,8 +1816,8 @@
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Touqeer" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                T
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Touqeer</p>
@@ -1845,8 +1844,8 @@
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80" alt="Yeriv" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                Y
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Yeriv</p>
@@ -1866,19 +1865,19 @@
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">E-Commerce ERP</span>
+                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Web Platform</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz developed our complete laptop store with product CRUD, real-time cart handling, and secure checkout. Stock sync and price updates are totally seamless. Highly recommended for full-stack web builds."
+                "Arbaz developed our complete web platform with robust CRUD capabilities, smooth cart handling, and secure checkout flows. Inventory syncing and updates work effortlessly. Outstanding developer to work with."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80" alt="Sarah Müller" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                SM
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Sarah Müller</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Manager, Laptop Harbor</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Lead</p>
               </div>
             </footer>
           </blockquote>
@@ -1894,19 +1893,19 @@
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Mobile &amp; GPS</span>
+                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Real-Time Systems</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "The live courier tracking and driver dispatch engine Arbaz engineered performs flawlessly under real-time load. His database structure and clean REST endpoints made our app deployment hassle-free."
+                "The live dispatch engine and real-time tracking dashboard Arbaz engineered perform flawlessly under load. His clean database structure and rock-solid REST APIs made integration a breeze."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80" alt="Marcus Bennett" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                MB
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Marcus Bennett</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Director, Movins Logistics</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Operations Director</p>
               </div>
             </footer>
           </blockquote>
@@ -1922,19 +1921,19 @@
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP &amp; CodeIgniter</span>
+                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP &amp; MySQL</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz brought strong technical problem-solving to our CodeIgniter and MySQL codebase. He structured the geolocation lookup, automated food collection routines, and delivered a clean, intuitive platform on schedule."
+                "Arbaz brought strong technical problem-solving to our PHP and MySQL architecture. He structured our geolocation routines, automated recurring tasks, and delivered a clean, scalable platform on schedule."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="pf w-11 h-11 rounded-full shrink-0 overflow-hidden border border-zinc-200 dark:border-zinc-700">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80" alt="Daniel Evans" loading="lazy" class="w-full h-full object-cover">
+              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+                DE
               </div>
               <div>
                 <p class="font-display font-bold text-sm text-zinc-900 dark:text-white">Daniel Evans</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">Technical Director, Food Resource Initiative</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Technical Director</p>
               </div>
             </footer>
           </blockquote>
