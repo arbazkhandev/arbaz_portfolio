@@ -1,283 +1,510 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ dark: (localStorage.getItem('theme')==='dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches) || document.documentElement.classList.contains('dark')), scrolled:false, mobileMenu:false }" :class="{'dark':dark}" x-init="$watch('dark',v=>{localStorage.setItem('theme',v?'dark':'light');if(v){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}});window.addEventListener('scroll',()=>scrolled=window.scrollY>20,{passive:true})" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog &amp; Technical Insights — Arbaz Khan</title>
+  <meta name="description"
+    content="In-depth articles, web development roadmaps, career guides, and backend engineering insights by Arbaz Khan — Full-Stack Software Developer.">
+
+  <!-- Immediate Zero-FOUC Theme Initialization -->
   <script>
-    (function() {
-      var saved = localStorage.getItem('theme');
+    (function () {
+      var saved = localStorage.getItem('dark');
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark) || !saved) {
+      if (saved === 'true' || (saved === null && prefersDark)) {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
       }
     })();
   </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Arbaz Khan's blog — thoughts on software engineering, ERP systems, and backend development."/>
-  <meta name="author" content="Arbaz Khan"/>
-  <meta property="og:title" content="Blog — Arbaz Khan"/>
-  <meta property="og:type" content="website"/>
-  <title>Blog — Arbaz Khan</title>
+
+  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet"/>
   <script>
-    tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['PT Sans','sans-serif'],body:['DM Sans','sans-serif']},colors:{accent:'#FF6B2B','accent-light':'#FF8F5C'}}}}
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#f97316',
+            'accent-light': '#fb923c',
+            'accent-dark': '#ea580c',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
   </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
   <style>
+    /* Critical base theme preventing light flashes */
+    html {
+      color-scheme: light;
+      background-color: #ffffff;
+    }
+
     html.dark {
       color-scheme: dark;
       background-color: #09090b;
     }
-    html:not(.dark) {
-      color-scheme: light;
-      background-color: #ffffff;
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s cubic-bezier(.16, 1, .3, 1), transform .65s cubic-bezier(.16, 1, .3, 1);
     }
-    *,*::before,*::after{box-sizing:border-box;}
-    html{font-family:'DM Sans',sans-serif;}
-    h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif;}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-    .reveal-delay-1{transition-delay:.08s;}.reveal-delay-2{transition-delay:.16s;}.reveal-delay-3{transition-delay:.24s;}.reveal-delay-4{transition-delay:.32s;}.reveal-delay-5{transition-delay:.4s;}.reveal-delay-6{transition-delay:.48s;}
-    .nav-link{position:relative;}
-    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .25s cubic-bezier(.4,0,.2,1);}
-    .nav-link:hover::after{width:100%;}
-    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#FF6B2B;border-radius:99px;}
-    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
-    .card{transition:transform .3s cubic-bezier(.4,0,.2,1),border-color .2s;}
-    .card:hover{transform:translateY(-3px);}
-    .btn-primary{position:relative;overflow:hidden;}
-    .btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1);}
-    .btn-primary:hover::after{left:160%;}
-    [x-cloak]{display:none!important;}
-    .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d1 { transition-delay: .08s; }
+    .d2 { transition-delay: .16s; }
+    .d3 { transition-delay: .24s; }
+
+    /* Shimmer CTA */
+    .shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, .15) 50%, transparent 60%);
+      transform: rotate(25deg) translateY(-100%);
+      transition: transform .75s ease;
+    }
+
+    .shimmer:hover::after {
+      transform: rotate(25deg) translateY(100%);
+    }
+
+    /* Image Frame */
+    .photo-frame {
+      overflow: hidden;
+      background: #e4e4e7;
+    }
+
+    .dark .photo-frame {
+      background: #27272a;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .group:hover .photo-frame img {
+      transform: scale(1.04);
+    }
+
+    [x-cloak] {
+      display: none !important;
+    }
   </style>
 </head>
-<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
 
-  <!-- NAV -->
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-    :class="scrolled?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':'bg-transparent'">
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased font-sans"
+  x-data="{
+    dark: localStorage.getItem('dark') === 'true' || (localStorage.getItem('dark') === null && window.matchMedia('(prefers-color-scheme: dark)').matches),
+    mobileMenu: false,
+    sc: false,
+    category: 'all',
+    init() {
+      if (this.dark) document.documentElement.classList.add('dark');
+      else document.documentElement.classList.remove('dark');
+      this.$watch('dark', val => {
+        localStorage.setItem('dark', val);
+        if (val) document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+      });
+      window.addEventListener('scroll', () => { this.sc = window.scrollY > 20 });
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+  }">
+
+  <!-- ═══ HEADER / NAV ═══ -->
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+    :class="sc ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5' : ''">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
-      <a href="index.html" class="font-display font-bold text-xl tracking-tight z-10" aria-label="Back to home">
+      
+      <a href="index.html" class="font-display font-bold text-xl tracking-tight z-10">
         <span class="text-zinc-900 dark:text-white">arbaz</span><span class="text-accent">khan</span>
       </a>
+
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
-        <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
-        <li><a href="projects.html" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
-        <li><a href="about.html" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="blog.html" class="nav-link text-accent font-medium" style="--tw-text-opacity:1">Blog</a></li>
-        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+        <li><a href="index.html" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Home</a></li>
+        <li><a href="about.html" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="projects.html" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Projects</a></li>
+        <li><a href="blog.html" class="text-accent font-semibold">Blog</a></li>
+        <li><a href="index.html#contact" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
+
       <div class="flex items-center gap-3">
-        <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors" :aria-label="dark?'Light mode':'Dark mode'">
-          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        <!-- Dark Mode Toggle -->
+        <button @click="dark = !dark"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          :aria-label="dark ? 'Light mode' : 'Dark mode'">
+          <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          <svg x-show="dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
         </button>
-        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          Hire me <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+
+        <!-- CTA Button -->
+        <a href="index.html#contact"
+          class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
+          Let's Talk →
         </a>
-        <button @click="mobileMenu=!mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mobileMenu" aria-label="Toggle menu">
-          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+
+        <!-- Mobile Hamburger -->
+        <button @click="mobileMenu = !mobileMenu"
+          class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
+          :aria-expanded="mobileMenu" aria-label="Toggle navigation menu">
+          <svg x-show="!mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg x-show="mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
       </div>
     </nav>
-    <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+
+    <!-- Mobile Menu Dropdown -->
+    <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
-        <li><a href="index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Services</a></li>
-        <li><a href="projects.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Work</a></li>
+        <li><a href="index.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Home</a></li>
         <li><a href="about.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
-        <li><a href="blog.html" class="block text-accent font-medium">Blog</a></li>
+        <li><a href="projects.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Projects</a></li>
+        <li><a href="blog.html" @click="mobileMenu=false" class="block text-accent font-semibold">Blog</a></li>
         <li><a href="index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
+  <main class="pb-24">
 
-    <!-- HERO BLOG -->
-    <section class="pt-36 pb-16 relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-      <div class="max-w-6xl mx-auto px-6 relative z-10">
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Writing</p>
-        <h1 class="reveal reveal-delay-1 font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">The Blog</h1>
-        <p class="reveal reveal-delay-2 text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed">Thoughts on UI/UX design, frontend development, and the realities of full-time freelancing. No fluff.</p>
+    <!-- ═══ BLOG HERO BANNER (MATCHING ABOUT ME STYLE) ═══ -->
+    <section class="relative pt-36 pb-20 md:pt-44 md:pb-24 bg-zinc-950 overflow-hidden border-b border-zinc-800/80">
+      
+      <!-- Code Texture & Glow Background Overlay -->
+      <div class="absolute inset-0 opacity-20 pointer-events-none select-none overflow-hidden font-mono text-[11px] md:text-xs text-emerald-400/70 dark:text-emerald-400/60 leading-relaxed blur-[1px]">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <p><span class="text-purple-400">&lt;article</span> <span class="text-yellow-300">class</span>=<span class="text-orange-300">"seo-rich-guide"</span>&gt;</p>
+            <p class="pl-4"><span class="text-purple-400">&lt;h1&gt;</span>Web Development Roadmap 2026<span class="text-purple-400">&lt;/h1&gt;</span></p>
+            <p class="pl-4"><span class="text-cyan-300">$internshipStrategies</span> = [<span class="text-orange-300">'Live Codebases'</span>, <span class="text-orange-300">'Real DBs'</span>];</p>
+            <p class="pl-4"><span class="text-purple-400">echo</span> <span class="text-blue-300">renderHighImpactGuide</span>();</p>
+            <p><span class="text-purple-400">&lt;/article&gt;</span></p>
+          </div>
+          <div>
+            <p><span class="text-purple-400">function</span> <span class="text-blue-300">optimizeSQLDatabase</span>() {</p>
+            <p class="pl-4"><span class="text-purple-400">return</span> <span class="text-cyan-300">DB</span>::<span class="text-yellow-300">table</span>(<span class="text-orange-300">'production_logs'</span>)</p>
+            <p class="pl-8">-><span class="text-blue-300">whereIndexed</span>(<span class="text-yellow-300">true</span>)-><span class="text-blue-300">get</span>();</p>
+            <p>}</p>
+          </div>
+          <div class="hidden md:block">
+            <p><span class="text-zinc-500">// Engineering Architecture &amp; Insights</span></p>
+            <p><span class="text-purple-400">const</span> <span class="text-cyan-300">topics</span> = [<span class="text-orange-300">'Full-Stack 2026'</span>, <span class="text-orange-300">'Internship Guide'</span>, <span class="text-orange-300">'Backend Scale'</span>];</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Filter tags -->
-        <div class="reveal reveal-delay-3 flex flex-wrap gap-2 mt-8" x-data="{active:'all'}">
-          <button @click="active='all'" :class="active==='all'?'bg-accent text-white border-accent':'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:border-accent'" class="text-sm px-4 py-1.5 rounded-full border transition-colors">All</button>
-          <button @click="active='design'" :class="active==='design'?'bg-accent text-white border-accent':'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:border-accent'" class="text-sm px-4 py-1.5 rounded-full border transition-colors">Design</button>
-          <button @click="active='dev'" :class="active==='dev'?'bg-accent text-white border-accent':'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:border-accent'" class="text-sm px-4 py-1.5 rounded-full border transition-colors">Dev</button>
-          <button @click="active='freelance'" :class="active==='freelance'?'bg-accent text-white border-accent':'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:border-accent'" class="text-sm px-4 py-1.5 rounded-full border transition-colors">Freelance</button>
+      <!-- Glowing Blur Accents -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-64 bg-accent/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-radial-vignette from-transparent via-zinc-950/70 to-zinc-950 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(9,9,11,0.4) 0%, rgba(9,9,11,0.92) 80%, rgba(9,9,11,1) 100%);"></div>
+
+      <!-- Centered Banner Content -->
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <h1 class="reveal font-display font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight mb-4">
+          Blog &amp; Technical Insights
+        </h1>
+        <p class="reveal d1 text-zinc-300 dark:text-zinc-300 text-base sm:text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+          Comprehensive guides, modern full-stack roadmaps, career playbooks, and production backend architectures.
+        </p>
+
+        <!-- Topic Filter Badges -->
+        <div class="reveal d2 flex flex-wrap justify-center gap-2 mt-8">
+          <button @click="category = 'all'"
+            :class="category === 'all' ? 'bg-accent text-white border-accent' : 'bg-zinc-900/90 text-zinc-400 border-zinc-800 hover:border-accent'"
+            class="text-xs sm:text-sm px-4 py-1.5 rounded-full border transition-all">All Articles</button>
+          <button @click="category = 'roadmap'"
+            :class="category === 'roadmap' ? 'bg-accent text-white border-accent' : 'bg-zinc-900/90 text-zinc-400 border-zinc-800 hover:border-accent'"
+            class="text-xs sm:text-sm px-4 py-1.5 rounded-full border transition-all">Roadmaps</button>
+          <button @click="category = 'career'"
+            :class="category === 'career' ? 'bg-accent text-white border-accent' : 'bg-zinc-900/90 text-zinc-400 border-zinc-800 hover:border-accent'"
+            class="text-xs sm:text-sm px-4 py-1.5 rounded-full border transition-all">Career &amp; Internships</button>
+          <button @click="category = 'backend'"
+            :class="category === 'backend' ? 'bg-accent text-white border-accent' : 'bg-zinc-900/90 text-zinc-400 border-zinc-800 hover:border-accent'"
+            class="text-xs sm:text-sm px-4 py-1.5 rounded-full border transition-all">Backend &amp; DB</button>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED ARTICLE -->
-    <section class="pb-16">
-      <div class="max-w-6xl mx-auto px-6">
-        <a href="blog-article.html" class="reveal group block rounded-3xl overflow-hidden bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
-          <div class="grid md:grid-cols-2">
-            <div class="photo-frame h-64 md:h-auto">
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80" alt="Why I ditched CSS frameworks" loading="lazy"/>
+    <!-- ═══ FEATURED HOT TOPIC: WEB DEV ROADMAP 2026 ═══ -->
+    <section class="max-w-6xl mx-auto px-6 py-16" x-show="category === 'all' || category === 'roadmap'">
+      <div class="mb-6 flex items-center justify-between">
+        <p class="text-xs font-semibold text-accent uppercase tracking-widest">Featured Guide</p>
+        <span class="text-xs text-zinc-500">Updated for 2026</span>
+      </div>
+
+      <a href="blog-article.html"
+        class="reveal group block rounded-3xl overflow-hidden bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent/80 transition-all duration-300 shadow-sm">
+        <div class="grid md:grid-cols-2 gap-0">
+          <div class="photo-frame h-64 md:h-full min-h-[300px]">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80" alt="Full-Stack Web Development Roadmap 2026" loading="eager" />
+          </div>
+          <div class="p-8 md:p-12 flex flex-col justify-center">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xs bg-orange-500/10 text-accent border border-orange-500/20 px-3 py-1 rounded-full font-semibold">Web Development</span>
+              <span class="text-xs text-zinc-500 dark:text-zinc-400">Engineering Blueprint</span>
             </div>
-            <div class="p-8 md:p-12 flex flex-col justify-center">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Design</span>
-                <span class="text-xs text-zinc-400">March 8, 2025 · 7 min read</span>
-              </div>
-              <h2 class="font-display font-bold text-2xl md:text-3xl text-zinc-900 dark:text-white mb-4 group-hover:text-accent transition-colors">Why I ditched heavy CSS frameworks for Tailwind — and what changed</h2>
-              <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-6">After years of fighting specificity wars and unused kilobytes, here's what finally convinced me to make the switch — and the measurable impact it had on both my workflow and my clients' performance scores.</p>
-              <span class="inline-flex items-center gap-1.5 text-sm font-medium text-accent nav-link">Read article →</span>
+            <h2 class="font-display font-bold text-2xl sm:text-3xl text-zinc-900 dark:text-white mb-4 group-hover:text-accent transition-colors leading-tight">
+              Full-Stack Web Development Roadmap for 2026: The Complete Step-by-Step Blueprint
+            </h2>
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm sm:text-base leading-relaxed mb-6">
+              A comprehensive technical walkthrough for mastering modern web engineering in 2026. Covers foundational JavaScript &amp; PHP paradigms, Laravel and CodeIgniter architectures, relational database indexing, dynamic AJAX flows, and production deployment.
+            </p>
+            <div class="inline-flex items-center gap-2 text-sm font-semibold text-accent group-hover:translate-x-1 transition-transform">
+              Read Full Roadmap Article →
             </div>
           </div>
-        </a>
+        </div>
+      </a>
+    </section>
+
+    <!-- ═══ ALL HOT ARTICLES GRID ═══ -->
+    <section class="max-w-6xl mx-auto px-6 pt-6">
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Article 1: How to Get an Internship in 2026 -->
+        <article class="reveal d1 group bg-zinc-50 dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 hover:border-accent/80 transition-all duration-300 shadow-sm flex flex-col justify-between"
+          x-show="category === 'all' || category === 'career'">
+          <div>
+            <div class="photo-frame w-full h-48">
+              <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=700&q=80" alt="How to Get a Software Developer Internship in 2026" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs bg-orange-500/10 text-accent border border-orange-500/20 px-2.5 py-0.5 rounded-full font-semibold">Career Growth</span>
+                <span class="text-xs text-zinc-500 dark:text-zinc-400">Career Guide</span>
+              </div>
+              <a href="blog-article.html">
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  How to Land a Software Developer Internship in 2026: Practical Strategies
+                </h3>
+              </a>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Practical advice on standing out in a competitive job market: building live production projects, mastering Git workflows, and contributing to real business codebases.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <a href="blog-article.html" class="inline-flex items-center text-xs font-semibold text-accent group-hover:translate-x-1 transition-transform">
+              Read Career Guide →
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 2: Backend Architecture & Database Scaling -->
+        <article class="reveal d2 group bg-zinc-50 dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 hover:border-accent/80 transition-all duration-300 shadow-sm flex flex-col justify-between"
+          x-show="category === 'all' || category === 'backend'">
+          <div>
+            <div class="photo-frame w-full h-48">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80" alt="Mastering MySQL & Relational DBs" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs bg-orange-500/10 text-accent border border-orange-500/20 px-2.5 py-0.5 rounded-full font-semibold">Backend &amp; SQL</span>
+                <span class="text-xs text-zinc-500 dark:text-zinc-400">Database Optimization</span>
+              </div>
+              <a href="blog-article.html">
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  Mastering Relational Databases: SQL Query Optimization for Scale
+                </h3>
+              </a>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                How to design clean relational MySQL schemas, avoid N+1 query bottlenecks, and ensure ACID transaction safety inside high-concurrency ERP and CRM systems.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <a href="blog-article.html" class="inline-flex items-center text-xs font-semibold text-accent group-hover:translate-x-1 transition-transform">
+              Read Database Guide →
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 3: Automated Business Logic & OCR -->
+        <article class="reveal d3 group bg-zinc-50 dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 hover:border-accent/80 transition-all duration-300 shadow-sm flex flex-col justify-between"
+          x-show="category === 'all' || category === 'backend'">
+          <div>
+            <div class="photo-frame w-full h-48">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80" alt="Automated Business Logic and OCR" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs bg-orange-500/10 text-accent border border-orange-500/20 px-2.5 py-0.5 rounded-full font-semibold">Automation &amp; AI</span>
+                <span class="text-xs text-zinc-500 dark:text-zinc-400">System Automation</span>
+              </div>
+              <a href="blog-article.html">
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  Automating Business Logic: From Expiry Notification Triggers to OCR
+                </h3>
+              </a>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Architecture breakdown of multi-stage expiry reminder pipelines (7-day, 3-day, 1-day) and integrating Tesseract OCR with Imagick for automated text extraction.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <a href="blog-article.html" class="inline-flex items-center text-xs font-semibold text-accent group-hover:translate-x-1 transition-transform">
+              Read Automation Breakdown →
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- ALL ARTICLES GRID -->
-    <section class="pb-24">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-3 gap-6">
-
-          <article class="reveal reveal-delay-1 card group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=700&q=80" alt="Design systems" loading="lazy"/>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Dev</span>
-                <span class="text-xs text-zinc-400">Feb 21, 2025</span>
-              </div>
-              <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Building a design system from scratch in a weekend</h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Tokens, components, docs — the exact process I follow to spin up a coherent design system in 48 hours.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">Read more →</a>
-            </div>
-          </article>
-
-          <article class="reveal reveal-delay-2 card group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80" alt="Freelance lessons" loading="lazy"/>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Freelance</span>
-                <span class="text-xs text-zinc-400">Jan 14, 2025</span>
-              </div>
-              <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">5 lessons from my first year of full-time freelancing</h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Contracts, pricing, scope creep, burnout — the things nobody tells you before you go solo.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">Read more →</a>
-            </div>
-          </article>
-
-          <article class="reveal reveal-delay-3 card group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=700&q=80" alt="Alpine.js article" loading="lazy"/>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Dev</span>
-                <span class="text-xs text-zinc-400">Dec 3, 2024</span>
-              </div>
-              <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Alpine.js is the jQuery of the modern era — and that's a compliment</h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">No build step, no virtual DOM, no config hell. Just sprinkle some behaviour and ship.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">Read more →</a>
-            </div>
-          </article>
-
-          <article class="reveal reveal-delay-1 card group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80" alt="UX laws article" loading="lazy"/>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Design</span>
-                <span class="text-xs text-zinc-400">Nov 18, 2024</span>
-              </div>
-              <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">The 7 UX laws every frontend dev should memorise</h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Fitts's Law, Hick's Law, Jakob's Law — the cognitive science behind every good interface decision.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">Read more →</a>
-            </div>
-          </article>
-
-          <article class="reveal reveal-delay-2 card group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="Client management" loading="lazy"/>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Freelance</span>
-                <span class="text-xs text-zinc-400">Oct 30, 2024</span>
-              </div>
-              <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">How I manage 3 client projects at once without losing my mind</h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">My exact Notion setup, communication rhythms, and the one rule I never break.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">Read more →</a>
-            </div>
-          </article>
-
-          <article class="reveal reveal-delay-3 card group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=700&q=80" alt="Dark mode article" loading="lazy"/>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Dev</span>
-                <span class="text-xs text-zinc-400">Oct 5, 2024</span>
-              </div>
-              <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Dark mode done right: beyond just inverting colours</h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Contrast ratios, elevation, shadows — what most dark mode implementations get completely wrong.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">Read more →</a>
-            </div>
-          </article>
-
+    <!-- ═══ NEWSLETTER / STAY UPDATED ═══ -->
+    <section class="max-w-6xl mx-auto px-6 mt-24">
+      <div class="reveal relative bg-zinc-900 dark:bg-zinc-900/90 text-white rounded-3xl p-8 sm:p-12 overflow-hidden border border-zinc-800">
+        <div class="relative z-10 max-w-2xl">
+          <p class="text-xs font-semibold text-accent uppercase tracking-widest mb-3">Stay in the Loop</p>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+            Get practical engineering articles delivered directly to your inbox.
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base mb-6 leading-relaxed">
+            No spam, no fluff — only actionable roadmaps, backend architectures, and developer career tips.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+            <input type="email" placeholder="Enter your email address" required
+              class="px-5 py-3 rounded-full bg-zinc-800 border border-zinc-700 text-white text-sm focus:outline-none focus:border-accent flex-1" />
+            <button type="submit"
+              class="shimmer bg-accent text-white font-semibold text-sm px-7 py-3 rounded-full hover:bg-accent-light transition-colors shrink-0">
+              Subscribe
+            </button>
+          </form>
         </div>
-
-        <!-- Pagination -->
-        <nav class="reveal flex items-center justify-center gap-2 mt-14" aria-label="Pagination">
-          <span class="w-9 h-9 flex items-center justify-center rounded-full bg-accent text-white text-sm font-medium">1</span>
-          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-accent hover:text-accent transition-colors text-sm">2</a>
-          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-accent hover:text-accent transition-colors text-sm">3</a>
-          <span class="text-zinc-400 text-sm px-1">…</span>
-          <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-accent hover:text-accent transition-colors text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </a>
-        </nav>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-zinc-100 dark:border-zinc-900">
-    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-zinc-400">&copy; <span id="year"></span> Arbaz Khan. All rights reserved.</p>
-      <p class="text-xs text-zinc-500">Built with <a href="https://tailwindcss.com" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Tailwind CSS</a> &amp; <a href="https://alpinejs.dev" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Alpine.js</a></p>
+  <!-- ═══ 4-COLUMN FOOTER ═══ -->
+  <footer class="border-t border-zinc-200/80 dark:border-zinc-900 pt-16 pb-12 bg-white dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      
+      <!-- Col 1: Brand -->
+      <div class="col-span-2 md:col-span-1 space-y-4">
+        <a href="index.html" class="font-display font-bold text-xl tracking-tight">
+          <span class="text-zinc-900 dark:text-white">arbaz</span><span class="text-accent">khan</span>
+        </a>
+        <p class="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+          Full-Stack Software Developer engineering production ERPs, CRMs, database architectures, and high-impact web applications.
+        </p>
+        <div class="flex items-center gap-3 pt-2">
+          <a href="https://github.com/arbazkhandev" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors" aria-label="GitHub">
+            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mrarbazkhan" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors" aria-label="LinkedIn">
+            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@ArbazyCode" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors" aria-label="YouTube">
+            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="space-y-3">
+        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Quick Links</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-accent transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-accent transition-colors">About Me</a></li>
+          <li><a href="projects.html" class="hover:text-accent transition-colors">Work &amp; Portfolio</a></li>
+          <li><a href="blog.html" class="hover:text-accent transition-colors">Blog &amp; Articles</a></li>
+          <li><a href="index.html#contact" class="hover:text-accent transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div class="space-y-3">
+        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Engineering Services</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html#services" class="hover:text-accent transition-colors">ERP &amp; Inventory Systems</a></li>
+          <li><a href="index.html#services" class="hover:text-accent transition-colors">Custom CRM Platforms</a></li>
+          <li><a href="index.html#services" class="hover:text-accent transition-colors">SQL Query Optimization</a></li>
+          <li><a href="index.html#services" class="hover:text-accent transition-colors">OCR &amp; Document Extraction</a></li>
+          <li><a href="index.html#services" class="hover:text-accent transition-colors">Payment Integrations</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact -->
+      <div class="space-y-3">
+        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Direct Contact</h4>
+        <ul class="space-y-2 text-xs">
+          <li class="text-zinc-500 dark:text-zinc-400">75230, Karachi, Pakistan</li>
+          <li><a href="mailto:arbaznadeem3130@gmail.com" class="text-accent hover:underline">arbaznadeem3130@gmail.com</a></li>
+          <li><a href="https://wa.me/923702361916" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">03702361916 (+92 370 2361916)</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="max-w-6xl mx-auto px-6 pt-8 border-t border-zinc-200/60 dark:border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+      <p>© 2026 Arbaz Khan. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="index.html" class="hover:text-accent">Privacy Policy</a>
+        <a href="index.html" class="hover:text-accent">Terms of Service</a>
+      </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);} });
-    },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-  </script>
-
 </body>
+
 </html>
