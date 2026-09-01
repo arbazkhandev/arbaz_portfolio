@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <script>
-    (function() {
+    (function () {
       var saved = localStorage.getItem('theme');
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (saved === 'dark' || (!saved && prefersDark) || !saved) {
@@ -51,10 +51,12 @@
       color-scheme: dark;
       background-color: #09090b;
     }
+
     html:not(.dark) {
       color-scheme: light;
       background-color: #ffffff;
     }
+
     *,
     *::before,
     *::after {
@@ -211,6 +213,7 @@
       0% {
         transform: translateX(0);
       }
+
       100% {
         transform: translateX(-50%);
       }
@@ -255,7 +258,8 @@
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Work</a></li>
         <li><a href="about.html"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a>
+        </li>
         <li><a href="#reviews"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Reviews</a></li>
@@ -384,18 +388,35 @@
 
             <!-- Tech Stack & Tools Capsule Tags -->
             <div class="reveal d4 mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-900">
-              <p class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack &amp; Tools</p>
+              <p class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack
+                &amp; Tools</p>
               <div class="flex flex-wrap gap-2" role="list" aria-label="Skills &amp; Technologies">
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">PHP</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">Laravel</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">CodeIgniter 3</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">MySQL / SQL</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">JavaScript</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">AJAX</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">REST APIs</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">Tesseract OCR</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">PayPal Integration</span>
-                <span role="listitem" class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">Git &amp; GitHub</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">PHP</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">Laravel</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">CodeIgniter
+                  3</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">MySQL
+                  / SQL</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">JavaScript</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">AJAX</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">REST
+                  APIs</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">Tesseract
+                  OCR</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">PayPal
+                  Integration</span>
+                <span role="listitem"
+                  class="stag text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-accent font-medium">Git
+                  &amp; GitHub</span>
               </div>
             </div>
           </div>
@@ -403,11 +424,12 @@
           <div class="reveal d2 flex justify-center md:justify-end">
             <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div
-                class="pf w-full h-full rounded-3xl shadow-xl shadow-zinc-200/50 dark:shadow-none border border-zinc-100 dark:border-zinc-800">
-                <img src="picture/arbaz_professional_image.jpg" alt="Arbaz Khan — Software Developer" loading="eager">
+                class="w-full h-full rounded-3xl shadow-2xl shadow-black/10 dark:shadow-none border-2 border-zinc-200/80 dark:border-zinc-800 overflow-hidden bg-zinc-900 flex items-center justify-center">
+                <img src="picture/arbaz_professional_image.jpg" alt="Arbaz Khan — Software Developer" loading="eager"
+                  class="w-full h-full object-cover object-[50%_18%] scale-125 transition-transform duration-500 hover:scale-130">
               </div>
               <div
-                class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">
+                class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg border border-white/20 dark:border-zinc-800">
                 Open to projects</div>
             </div>
           </div>
@@ -614,14 +636,16 @@
                   </svg>
                 </div>
                 <span
-                  class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">Mobile &amp; Web</span>
+                  class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">Mobile
+                  &amp; Web</span>
               </div>
               <a href="service-detail.html?service=app-development">
                 <h3
                   class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
                   App Development</h3>
               </a>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">Cross-platform mobile apps, courier &amp; live tracking solutions, and real-time backend API integrations.</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">Cross-platform mobile apps,
+                courier &amp; live tracking solutions, and real-time backend API integrations.</p>
             </div>
             <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between">
               <a href="service-detail.html?service=app-development"
@@ -782,8 +806,9 @@
             </p>
             <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">How I Work
             </h2>
-            <p class="reveal d2 text-zinc-600 dark:text-zinc-400 text-sm md:text-base max-w-xl mt-3">A structured
-              6-phase engineering lifecycle — from kickoff and architectural blueprint to production deployment.</p>
+            <p class="reveal d2 text-zinc-600 dark:text-zinc-400 text-sm md:text-base max-w-xl mt-3">
+              Our engineering process follows a structured, six-phase lifecycle. It begins with kickoff and the
+              architectural blueprint, then carries us all the way through to final production deployment. </p>
           </div>
 
           <!-- Navigation Controls -->
@@ -1307,13 +1332,20 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
 
           <!-- 1. Laptop Harbor -->
-          <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
+          <article
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
             <!-- Fixed Image Frame -->
-            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
-              <img src="picture/laptop harbor/thumbnail.jpg" alt="Laptop Harbor E-Commerce App" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+            <div
+              class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
+              <img src="picture/laptop harbor/thumbnail.jpg" alt="Laptop Harbor E-Commerce App" loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none">
+              </div>
               <div class="absolute top-3.5 left-3.5">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">E-Commerce &amp; Admin</span>
+                <span
+                  class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">E-Commerce
+                  &amp; Admin</span>
               </div>
             </div>
             <!-- Content Area with exact vertical alignment -->
@@ -1321,22 +1353,34 @@
               <div>
                 <!-- Tag Bar (Fixed Height) -->
                 <div class="h-6 flex items-center gap-1.5 overflow-hidden mb-3">
-                  <span class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">E-Commerce App</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Admin Panel</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Cart &amp; Auth</span>
+                  <span
+                    class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">E-Commerce
+                    App</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Admin
+                    Panel</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Cart
+                    &amp; Auth</span>
                 </div>
                 <!-- Title (Fixed 2-Line Height) -->
                 <div class="h-14 flex items-start mb-2">
                   <a href="case-study.html?project=laptop-harbor" class="w-full">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">Laptop Harbor: E-Commerce Laptop Selling App</h3>
+                    <h3
+                      class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                      Laptop Harbor: E-Commerce Laptop Selling App</h3>
                   </a>
                 </div>
                 <!-- Description (Fixed 2-Line Height) -->
-                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">E-commerce laptop store featuring an admin dashboard for inventory, product spec filters, shopping cart, and secure checkout.</p>
+                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+                  E-commerce laptop store featuring an admin dashboard for inventory, product spec filters, shopping
+                  cart, and secure checkout.</p>
               </div>
               <!-- Action Footer -->
-              <div class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
-                <a href="case-study.html?project=laptop-harbor" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+              <div
+                class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
+                <a href="case-study.html?project=laptop-harbor"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
                   View case study →
                 </a>
                 <span class="text-xs font-semibold text-zinc-400">2025</span>
@@ -1345,13 +1389,20 @@
           </article>
 
           <!-- 2. Cars and Vans UK -->
-          <article class="card-h reveal d2 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
+          <article
+            class="card-h reveal d2 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
             <!-- Fixed Image Frame -->
-            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
-              <img src="picture/cvextras/ladning_vehicle_for_sale_white.png" alt="Cars and Vans UK" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+            <div
+              class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
+              <img src="picture/cvextras/ladning_vehicle_for_sale_white.png" alt="Cars and Vans UK" loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none">
+              </div>
               <div class="absolute top-3.5 left-3.5">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">UK Automotive &amp; CRM</span>
+                <span
+                  class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">UK
+                  Automotive &amp; CRM</span>
               </div>
             </div>
             <!-- Content Area with exact vertical alignment -->
@@ -1359,22 +1410,33 @@
               <div>
                 <!-- Tag Bar (Fixed Height) -->
                 <div class="h-6 flex items-center gap-1.5 overflow-hidden mb-3">
-                  <span class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">Automotive</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Dealership CRM</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Finance Engine</span>
+                  <span
+                    class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">Automotive</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Dealership
+                    CRM</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Finance
+                    Engine</span>
                 </div>
                 <!-- Title (Fixed 2-Line Height) -->
                 <div class="h-14 flex items-start mb-2">
                   <a href="case-study.html?project=cars-and-vans-uk" class="w-full">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">Cars and Vans UK: Dealership CRM &amp; Showcase</h3>
+                    <h3
+                      class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                      Cars and Vans UK: Dealership CRM &amp; Showcase</h3>
                   </a>
                 </div>
                 <!-- Description (Fixed 2-Line Height) -->
-                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">UK dealership CRM and showroom website with visual sales pipelines, finance payment calculators, e-signatures, and live stock tracking.</p>
+                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">UK
+                  dealership CRM and showroom website with visual sales pipelines, finance payment calculators,
+                  e-signatures, and live stock tracking.</p>
               </div>
               <!-- Action Footer -->
-              <div class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
-                <a href="case-study.html?project=cars-and-vans-uk" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+              <div
+                class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
+                <a href="case-study.html?project=cars-and-vans-uk"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
                   View case study →
                 </a>
                 <span class="text-xs font-semibold text-zinc-400">2025</span>
@@ -1383,13 +1445,20 @@
           </article>
 
           <!-- 3. Movins — Courier & Delivery App -->
-          <article class="card-h reveal d3 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
+          <article
+            class="card-h reveal d3 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
             <!-- Fixed Image Frame -->
-            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
-              <img src="picture/movins.png" alt="Movins Courier & Delivery App" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+            <div
+              class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
+              <img src="picture/movins.png" alt="Movins Courier & Delivery App" loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none">
+              </div>
               <div class="absolute top-3.5 left-3.5">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">Courier &amp; Delivery</span>
+                <span
+                  class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">Courier
+                  &amp; Delivery</span>
               </div>
             </div>
             <!-- Content Area with exact vertical alignment -->
@@ -1397,22 +1466,34 @@
               <div>
                 <!-- Tag Bar (Fixed Height) -->
                 <div class="h-6 flex items-center gap-1.5 overflow-hidden mb-3">
-                  <span class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">Mobile App</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Courier Logistics</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Live GPS</span>
+                  <span
+                    class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">Mobile
+                    App</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Courier
+                    Logistics</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Live
+                    GPS</span>
                 </div>
                 <!-- Title (Fixed 2-Line Height) -->
                 <div class="h-14 flex items-start mb-2">
                   <a href="case-study.html?project=movins" class="w-full">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">Movins: Courier &amp; Delivery Mobile App</h3>
+                    <h3
+                      class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                      Movins: Courier &amp; Delivery Mobile App</h3>
                   </a>
                 </div>
                 <!-- Description (Fixed 2-Line Height) -->
-                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">On-demand courier delivery mobile app with live GPS route tracking, fast nearby driver matching, and in-app booking.</p>
+                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+                  On-demand courier delivery mobile app with live GPS route tracking, fast nearby driver matching, and
+                  in-app booking.</p>
               </div>
               <!-- Action Footer -->
-              <div class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
-                <a href="case-study.html?project=movins" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+              <div
+                class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
+                <a href="case-study.html?project=movins"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
                   View case study →
                 </a>
                 <span class="text-xs font-semibold text-zinc-400">2024</span>
@@ -1421,13 +1502,20 @@
           </article>
 
           <!-- 4. InfluenceX PR -->
-          <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
+          <article
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
             <!-- Fixed Image Frame -->
-            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
-              <img src="picture/influencex/hero.png" alt="InfluenceX PR Agency Website" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+            <div
+              class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
+              <img src="picture/influencex/hero.png" alt="InfluenceX PR Agency Website" loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none">
+              </div>
               <div class="absolute top-3.5 left-3.5">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">WordPress &amp; PR</span>
+                <span
+                  class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">WordPress
+                  &amp; PR</span>
               </div>
             </div>
             <!-- Content Area with exact vertical alignment -->
@@ -1435,22 +1523,33 @@
               <div>
                 <!-- Tag Bar (Fixed Height) -->
                 <div class="h-6 flex items-center gap-1.5 overflow-hidden mb-3">
-                  <span class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">WordPress</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">PR Agency</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Action Cards</span>
+                  <span
+                    class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">WordPress</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">PR
+                    Agency</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Action
+                    Cards</span>
                 </div>
                 <!-- Title (Fixed 2-Line Height) -->
                 <div class="h-14 flex items-start mb-2">
                   <a href="case-study.html?project=influencex-pr" class="w-full">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">InfluenceX PR: WordPress Digital Marketing Website</h3>
+                    <h3
+                      class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                      InfluenceX PR: WordPress Digital Marketing Website</h3>
                   </a>
                 </div>
                 <!-- Description (Fixed 2-Line Height) -->
-                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">WordPress PR agency website with direct WhatsApp contact cards, MSN media review showcases, and clean SEO permalinks.</p>
+                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+                  WordPress PR agency website with direct WhatsApp contact cards, MSN media review showcases, and clean
+                  SEO permalinks.</p>
               </div>
               <!-- Action Footer -->
-              <div class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
-                <a href="case-study.html?project=influencex-pr" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+              <div
+                class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
+                <a href="case-study.html?project=influencex-pr"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
                   View case study →
                 </a>
                 <span class="text-xs font-semibold text-zinc-400">2024</span>
@@ -1459,13 +1558,20 @@
           </article>
 
           <!-- 5. Daily Insi -->
-          <article class="card-h reveal d2 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
+          <article
+            class="card-h reveal d2 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
             <!-- Fixed Image Frame -->
-            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
-              <img src="picture/cvextras/dailyisni.png" alt="Daily Insi" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+            <div
+              class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
+              <img src="picture/cvextras/dailyisni.png" alt="Daily Insi" loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none">
+              </div>
               <div class="absolute top-3.5 left-3.5">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">WordPress &amp; Media</span>
+                <span
+                  class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">WordPress
+                  &amp; Media</span>
               </div>
             </div>
             <!-- Content Area with exact vertical alignment -->
@@ -1473,22 +1579,34 @@
               <div>
                 <!-- Tag Bar (Fixed Height) -->
                 <div class="h-6 flex items-center gap-1.5 overflow-hidden mb-3">
-                  <span class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">WordPress Blog</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Digital News</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">SEO 98/100</span>
+                  <span
+                    class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">WordPress
+                    Blog</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Digital
+                    News</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">SEO
+                    98/100</span>
                 </div>
                 <!-- Title (Fixed 2-Line Height) -->
                 <div class="h-14 flex items-start mb-2">
                   <a href="case-study.html?project=daily-insi" class="w-full">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">Daily Insi: WordPress Digital Media &amp; Blogging</h3>
+                    <h3
+                      class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                      Daily Insi: WordPress Digital Media &amp; Blogging</h3>
                   </a>
                 </div>
                 <!-- Description (Fixed 2-Line Height) -->
-                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">Fast WordPress news and blog platform built for quick article publishing, clean category browsing, and 98+ PageSpeed scores.</p>
+                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+                  Fast WordPress news and blog platform built for quick article publishing, clean category browsing, and
+                  98+ PageSpeed scores.</p>
               </div>
               <!-- Action Footer -->
-              <div class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
-                <a href="case-study.html?project=daily-insi" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+              <div
+                class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
+                <a href="case-study.html?project=daily-insi"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
                   View case study →
                 </a>
                 <span class="text-xs font-semibold text-zinc-400">2026</span>
@@ -1497,13 +1615,20 @@
           </article>
 
           <!-- 6. Any2Convert -->
-          <article class="card-h reveal d3 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
+          <article
+            class="card-h reveal d3 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
             <!-- Fixed Image Frame -->
-            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
-              <img src="picture/any2convert/main.png" alt="Any2Convert" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+            <div
+              class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
+              <img src="picture/any2convert/main.png" alt="Any2Convert" loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none">
+              </div>
               <div class="absolute top-3.5 left-3.5">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">Tools &amp; Utilities</span>
+                <span
+                  class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">Tools
+                  &amp; Utilities</span>
               </div>
             </div>
             <!-- Content Area with exact vertical alignment -->
@@ -1511,22 +1636,34 @@
               <div>
                 <!-- Tag Bar (Fixed Height) -->
                 <div class="h-6 flex items-center gap-1.5 overflow-hidden mb-3">
-                  <span class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">Web Tools</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">OCR Pipeline</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Async Queues</span>
+                  <span
+                    class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">Web
+                    Tools</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">OCR
+                    Pipeline</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Async
+                    Queues</span>
                 </div>
                 <!-- Title (Fixed 2-Line Height) -->
                 <div class="h-14 flex items-start mb-2">
                   <a href="case-study.html?project=any2convert" class="w-full">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">Any2Convert: Multi-Format Conversion Platform</h3>
+                    <h3
+                      class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                      Any2Convert: Multi-Format Conversion Platform</h3>
                   </a>
                 </div>
                 <!-- Description (Fixed 2-Line Height) -->
-                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">Online file conversion tool for converting documents, images, and text directly in the browser with background OCR processing.</p>
+                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+                  Online file conversion tool for converting documents, images, and text directly in the browser with
+                  background OCR processing.</p>
               </div>
               <!-- Action Footer -->
-              <div class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
-                <a href="case-study.html?project=any2convert" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+              <div
+                class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
+                <a href="case-study.html?project=any2convert"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
                   View case study →
                 </a>
                 <span class="text-xs font-semibold text-zinc-400">2026</span>
@@ -1535,13 +1672,21 @@
           </article>
 
           <!-- 7. FoodForNought -->
-          <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
+          <article
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 hover:border-accent flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300">
             <!-- Fixed Image Frame -->
-            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
-              <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" alt="FoodForNought" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+            <div
+              class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-950 flex items-center justify-center shrink-0">
+              <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" alt="FoodForNought"
+                loading="lazy"
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none">
+              </div>
               <div class="absolute top-3.5 left-3.5">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">CodeIgniter Platform</span>
+                <span
+                  class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white border border-white/10 shadow-sm">CodeIgniter
+                  Platform</span>
               </div>
             </div>
             <!-- Content Area with exact vertical alignment -->
@@ -1549,22 +1694,32 @@
               <div>
                 <!-- Tag Bar (Fixed Height) -->
                 <div class="h-6 flex items-center gap-1.5 overflow-hidden mb-3">
-                  <span class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">CodeIgniter</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">PHP &amp; MySQL</span>
-                  <span class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Geo-Location</span>
+                  <span
+                    class="text-[11px] font-medium bg-orange-50 dark:bg-accent/15 text-accent border border-orange-200 dark:border-accent/30 px-2.5 py-0.5 rounded-full shrink-0">CodeIgniter</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">PHP
+                    &amp; MySQL</span>
+                  <span
+                    class="text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded-full shrink-0">Geo-Location</span>
                 </div>
                 <!-- Title (Fixed 2-Line Height) -->
                 <div class="h-14 flex items-start mb-2">
                   <a href="case-study.html?project=food-for-nought" class="w-full">
-                    <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">FoodForNought: Food Resource Management System</h3>
+                    <h3
+                      class="font-display font-bold text-lg text-zinc-900 dark:text-white group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                      FoodForNought: Food Resource Management System</h3>
                   </a>
                 </div>
                 <!-- Description (Fixed 2-Line Height) -->
-                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">Food resource management system built with CodeIgniter and PHP to coordinate food collections with location tracking.</p>
+                <p class="h-10 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+                  Food resource management system built with CodeIgniter and PHP to coordinate food collections with
+                  location tracking.</p>
               </div>
               <!-- Action Footer -->
-              <div class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
-                <a href="case-study.html?project=food-for-nought" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+              <div
+                class="pt-3.5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between mt-auto">
+                <a href="case-study.html?project=food-for-nought"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
                   View case study →
                 </a>
                 <span class="text-xs font-semibold text-zinc-400">2024</span>
@@ -1582,10 +1737,12 @@
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Social proof</p>
-            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">What clients say</h2>
+            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">What clients
+              say</h2>
           </div>
           <p class="reveal d2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 max-w-md">
-            Feedback from UK dealership owners, agency founders, and product teams on delivered projects and live systems.
+            Feedback from UK dealership owners, agency founders, and product teams on delivered projects and live
+            systems.
           </p>
         </div>
       </div>
@@ -1593,32 +1750,57 @@
       <!-- Marquee Strip with Side Gradient Fades -->
       <div class="relative w-full overflow-hidden py-4">
         <!-- Edge Fades -->
-        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-white dark:from-zinc-950 to-transparent z-10"></div>
-        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-white dark:from-zinc-950 to-transparent z-10"></div>
+        <div
+          class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-white dark:from-zinc-950 to-transparent z-10">
+        </div>
+        <div
+          class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-white dark:from-zinc-950 to-transparent z-10">
+        </div>
 
         <div class="reviews-track">
 
           <!-- ─── SET 1 ─── -->
 
           <!-- Card 1: Dale Spare -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1" aria-label="5 stars">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">CRM &amp; Web</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">CRM
+                  &amp; Web</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz built our entire Dealership CRM and customer landing page from scratch. The visual sales pipeline, finance HP/PCP calculator, and digital e-signatures completely modernized how we manage vehicle sales. Fast turnaround and rock-solid execution."
+                "Arbaz built our entire Dealership CRM and customer landing page from scratch. The visual sales
+                pipeline, finance HP/PCP calculator, and digital e-signatures completely modernized how we manage
+                vehicle sales. Fast turnaround and rock-solid execution."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 DS
               </div>
               <div>
@@ -1629,24 +1811,45 @@
           </blockquote>
 
           <!-- Card 2: Touqeer -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1" aria-label="5 stars">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Agency Platform</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Agency
+                  Platform</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Our agency website had several layout flaws and broken redirect rules before Arbaz stepped in. He cleaned up our WordPress setup, fixed the responsive sliders, and polished the media spotlights. Finally our site is in top shape to pitch directly to high-ticket clients."
+                "Our agency website had several layout flaws and broken redirect rules before Arbaz stepped in. He
+                cleaned up our WordPress setup, fixed the responsive sliders, and polished the media spotlights. Finally
+                our site is in top shape to pitch directly to high-ticket clients."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 T
               </div>
               <div>
@@ -1657,24 +1860,45 @@
           </blockquote>
 
           <!-- Card 3: Yeriv -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1" aria-label="5 stars">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Bug Fix &amp; Performance</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Bug
+                  Fix &amp; Performance</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "We had a stubborn backend bug breaking user checkout requests right before a major promo. Arbaz dug into the code, identified the database query deadlock within a couple of hours, and stabilized our system cleanly. A true professional."
+                "We had a stubborn backend bug breaking user checkout requests right before a major promo. Arbaz dug
+                into the code, identified the database query deadlock within a couple of hours, and stabilized our
+                system cleanly. A true professional."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 Y
               </div>
               <div>
@@ -1685,24 +1909,45 @@
           </blockquote>
 
           <!-- Card 4: Sarah Müller -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1" aria-label="5 stars">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Web Platform</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Web
+                  Platform</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz developed our complete web platform with robust CRUD capabilities, smooth cart handling, and secure checkout flows. Inventory syncing and updates work effortlessly. Outstanding developer to work with."
+                "Arbaz developed our complete web platform with robust CRUD capabilities, smooth cart handling, and
+                secure checkout flows. Inventory syncing and updates work effortlessly. Outstanding developer to work
+                with."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 SM
               </div>
               <div>
@@ -1713,24 +1958,44 @@
           </blockquote>
 
           <!-- Card 5: Marcus Bennett -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1" aria-label="5 stars">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Real-Time Systems</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Real-Time
+                  Systems</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "The live dispatch engine and real-time tracking dashboard Arbaz engineered perform flawlessly under load. His clean database structure and rock-solid REST APIs made integration a breeze."
+                "The live dispatch engine and real-time tracking dashboard Arbaz engineered perform flawlessly under
+                load. His clean database structure and rock-solid REST APIs made integration a breeze."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 MB
               </div>
               <div>
@@ -1741,24 +2006,44 @@
           </blockquote>
 
           <!-- Card 6: Daniel Evans -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1" aria-label="5 stars">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP &amp; MySQL</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP
+                  &amp; MySQL</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz brought strong technical problem-solving to our PHP and MySQL architecture. He structured our geolocation routines, automated recurring tasks, and delivered a clean, scalable platform on schedule."
+                "Arbaz brought strong technical problem-solving to our PHP and MySQL architecture. He structured our
+                geolocation routines, automated recurring tasks, and delivered a clean, scalable platform on schedule."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 DE
               </div>
               <div>
@@ -1771,24 +2056,46 @@
           <!-- ─── SET 2 (Exact Duplicate for Seamless Infinite Loop) ─── -->
 
           <!-- Card 1 Duplicate -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm" aria-hidden="true">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm"
+            aria-hidden="true">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">CRM &amp; Web</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">CRM
+                  &amp; Web</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz built our entire Dealership CRM and customer landing page from scratch. The visual sales pipeline, finance HP/PCP calculator, and digital e-signatures completely modernized how we manage vehicle sales. Fast turnaround and rock-solid execution."
+                "Arbaz built our entire Dealership CRM and customer landing page from scratch. The visual sales
+                pipeline, finance HP/PCP calculator, and digital e-signatures completely modernized how we manage
+                vehicle sales. Fast turnaround and rock-solid execution."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 DS
               </div>
               <div>
@@ -1799,24 +2106,46 @@
           </blockquote>
 
           <!-- Card 2 Duplicate -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm" aria-hidden="true">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm"
+            aria-hidden="true">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Agency Platform</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Agency
+                  Platform</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Our agency website had several layout flaws and broken redirect rules before Arbaz stepped in. He cleaned up our WordPress setup, fixed the responsive sliders, and polished the media spotlights. Finally our site is in top shape to pitch directly to high-ticket clients."
+                "Our agency website had several layout flaws and broken redirect rules before Arbaz stepped in. He
+                cleaned up our WordPress setup, fixed the responsive sliders, and polished the media spotlights. Finally
+                our site is in top shape to pitch directly to high-ticket clients."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 T
               </div>
               <div>
@@ -1827,24 +2156,46 @@
           </blockquote>
 
           <!-- Card 3 Duplicate -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm" aria-hidden="true">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm"
+            aria-hidden="true">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Bug Fix &amp; Performance</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Bug
+                  Fix &amp; Performance</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "We had a stubborn backend bug breaking user checkout requests right before a major promo. Arbaz dug into the code, identified the database query deadlock within a couple of hours, and stabilized our system cleanly. A true professional."
+                "We had a stubborn backend bug breaking user checkout requests right before a major promo. Arbaz dug
+                into the code, identified the database query deadlock within a couple of hours, and stabilized our
+                system cleanly. A true professional."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 Y
               </div>
               <div>
@@ -1855,24 +2206,46 @@
           </blockquote>
 
           <!-- Card 4 Duplicate -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm" aria-hidden="true">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm"
+            aria-hidden="true">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Web Platform</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Web
+                  Platform</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz developed our complete web platform with robust CRUD capabilities, smooth cart handling, and secure checkout flows. Inventory syncing and updates work effortlessly. Outstanding developer to work with."
+                "Arbaz developed our complete web platform with robust CRUD capabilities, smooth cart handling, and
+                secure checkout flows. Inventory syncing and updates work effortlessly. Outstanding developer to work
+                with."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 SM
               </div>
               <div>
@@ -1883,24 +2256,45 @@
           </blockquote>
 
           <!-- Card 5 Duplicate -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm" aria-hidden="true">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm"
+            aria-hidden="true">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Real-Time Systems</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">Real-Time
+                  Systems</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "The live dispatch engine and real-time tracking dashboard Arbaz engineered perform flawlessly under load. His clean database structure and rock-solid REST APIs made integration a breeze."
+                "The live dispatch engine and real-time tracking dashboard Arbaz engineered perform flawlessly under
+                load. His clean database structure and rock-solid REST APIs made integration a breeze."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 MB
               </div>
               <div>
@@ -1911,24 +2305,45 @@
           </blockquote>
 
           <!-- Card 6 Duplicate -->
-          <blockquote class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm" aria-hidden="true">
+          <blockquote
+            class="w-[360px] sm:w-[410px] shrink-0 bg-zinc-50 dark:bg-zinc-900/90 rounded-2xl p-6 sm:p-7 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between hover:border-accent/70 transition-all duration-300 shadow-sm"
+            aria-hidden="true">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <div class="flex gap-1">
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 </div>
-                <span class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP &amp; MySQL</span>
+                <span
+                  class="text-[10px] uppercase font-semibold tracking-wider text-accent bg-orange-500/10 px-2.5 py-0.5 rounded-full">PHP
+                  &amp; MySQL</span>
               </div>
               <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 italic">
-                "Arbaz brought strong technical problem-solving to our PHP and MySQL architecture. He structured our geolocation routines, automated recurring tasks, and delivered a clean, scalable platform on schedule."
+                "Arbaz brought strong technical problem-solving to our PHP and MySQL architecture. He structured our
+                geolocation routines, automated recurring tasks, and delivered a clean, scalable platform on schedule."
               </p>
             </div>
             <footer class="flex items-center gap-3 pt-4 border-t border-zinc-200/60 dark:border-zinc-800">
-              <div class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center font-display font-bold text-sm text-accent shrink-0">
                 DE
               </div>
               <div>
@@ -1977,7 +2392,8 @@
                     class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
                     Full-Stack Web Development Roadmap for 2026</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Complete blueprint covering modern PHP, Laravel architecture, relational databases, and asynchronous UI execution.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Complete blueprint covering
+                  modern PHP, Laravel architecture, relational databases, and asynchronous UI execution.</p>
               </div>
             </div>
             <div class="px-6 pb-6 pt-0">
@@ -1992,8 +2408,8 @@
             class="reveal d2 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent flex flex-col justify-between">
             <div>
               <div class="pf w-full h-44">
-                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=700&q=80" alt="How to Land a Software Developer Internship"
-                  loading="lazy">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=700&q=80"
+                  alt="How to Land a Software Developer Internship" loading="lazy">
               </div>
               <div class="p-6">
                 <div class="flex items-center gap-3 mb-3">
@@ -2006,7 +2422,8 @@
                     class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
                     How to Land a Software Developer Internship in 2026</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Actionable strategies for junior developers to stand out: live business codebases, Git workflows, and problem solving.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Actionable strategies for
+                  junior developers to stand out: live business codebases, Git workflows, and problem solving.</p>
               </div>
             </div>
             <div class="px-6 pb-6 pt-0">
@@ -2021,13 +2438,14 @@
             class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent flex flex-col justify-between">
             <div>
               <div class="pf w-full h-44">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80" alt="Mastering MySQL & Database Optimization"
-                  loading="lazy">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80"
+                  alt="Mastering MySQL & Database Optimization" loading="lazy">
               </div>
               <div class="p-6">
                 <div class="flex items-center gap-3 mb-3">
                   <span
-                    class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full font-semibold">Backend &amp; SQL</span>
+                    class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full font-semibold">Backend
+                    &amp; SQL</span>
                   <span class="text-xs text-zinc-400">Architecture</span>
                 </div>
                 <a href="blog-article.html">
@@ -2035,7 +2453,8 @@
                     class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
                     Mastering MySQL: SQL Query Optimization for Scale</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Designing relational MySQL schemas, eliminating N+1 queries, and maintaining ACID transaction stability.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Designing relational MySQL
+                  schemas, eliminating N+1 queries, and maintaining ACID transaction stability.</p>
               </div>
             </div>
             <div class="px-6 pb-6 pt-0">
@@ -2067,11 +2486,12 @@
                 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-5">
                 Let's work<br>together</h2>
               <p class="reveal d2 text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-                I'm open to software development opportunities, custom ERP/CRM platform builds, database optimizations, and full-stack projects. Send a direct message below:
+                I'm open to software development opportunities, custom ERP/CRM platform builds, database optimizations,
+                and full-stack projects. Send a direct message below:
               </p>
 
               <div class="reveal d3 flex flex-col gap-4">
-                
+
                 <!-- Email -->
                 <a href="mailto:arbaznadeem3130@gmail.com"
                   class="group flex items-center gap-3 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
@@ -2091,7 +2511,8 @@
                   <span
                     class="w-9 h-9 flex items-center justify-center bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg group-hover:bg-accent/10 dark:group-hover:bg-accent/20 group-hover:text-accent group-hover:border-accent transition-colors shrink-0">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </span>
                   <span class="text-sm font-medium">03702361916 (+92 370 2361916)</span>
@@ -2102,8 +2523,10 @@
                   <span
                     class="w-9 h-9 flex items-center justify-center bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shrink-0 text-accent">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </span>
                   <span class="text-sm">75230, Karachi, Pakistan</span>
@@ -2184,33 +2607,40 @@
               }
             }">
               <form @submit.prevent="sendForm()" class="space-y-4">
-                
-                <div x-show="sent" x-cloak class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm font-medium">
+
+                <div x-show="sent" x-cloak
+                  class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm font-medium">
                   ✓ Message sent successfully to Arbaz! I will respond to your email shortly.
                 </div>
 
                 <div class="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label for="fname" class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Your Name <span class="text-accent">*</span></label>
+                    <label for="fname" class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Your
+                      Name <span class="text-accent">*</span></label>
                     <input type="text" id="fname" x-model="name" placeholder="John Doe" required
                       class="w-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
                   </div>
                   <div>
-                    <label for="femail" class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Email Address <span class="text-accent">*</span></label>
+                    <label for="femail" class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Email
+                      Address <span class="text-accent">*</span></label>
                     <input type="email" id="femail" x-model="email" placeholder="john@example.com" required
                       class="w-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
                   </div>
                 </div>
 
                 <div>
-                  <label for="fsubject" class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Subject</label>
+                  <label for="fsubject"
+                    class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Subject</label>
                   <input type="text" id="fsubject" x-model="subject" placeholder="Project Inquiry / Job Opportunity"
                     class="w-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
                 </div>
 
                 <div>
-                  <label for="fmessage" class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Message <span class="text-accent">*</span></label>
-                  <textarea id="fmessage" x-model="message" rows="4" placeholder="Tell me about your project requirements, timeline, or inquiry..." required
+                  <label for="fmessage"
+                    class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">Message <span
+                      class="text-accent">*</span></label>
+                  <textarea id="fmessage" x-model="message" rows="4"
+                    placeholder="Tell me about your project requirements, timeline, or inquiry..." required
                     class="w-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
                 </div>
 
@@ -2230,33 +2660,51 @@
   </main>
 
   <!-- ═══ 4-COLUMN FOOTER ═══ -->
-  <footer class="border-t border-zinc-200/80 dark:border-zinc-900 pt-16 pb-12 bg-white dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
+  <footer
+    class="border-t border-zinc-200/80 dark:border-zinc-900 pt-16 pb-12 bg-white dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
-      
+
       <!-- Col 1: Brand -->
       <div class="col-span-2 md:col-span-1 space-y-4">
         <a href="index.html" class="font-display font-bold text-xl tracking-tight">
           <span class="text-zinc-900 dark:text-white">arbaz</span><span class="text-accent">khan</span>
         </a>
         <p class="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-          Full-Stack Software Developer engineering production ERPs, CRMs, database architectures, and high-impact web applications.
+          Full-Stack Software Developer engineering production ERPs, CRMs, database architectures, and high-impact web
+          applications.
         </p>
         <div class="flex items-center gap-3 pt-2">
-          <a href="https://github.com/arbazkhandev" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors" aria-label="GitHub">
-            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <a href="https://github.com/arbazkhandev" target="_blank" rel="noopener"
+            class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors"
+            aria-label="GitHub">
+            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
           </a>
-          <a href="https://www.linkedin.com/in/mrarbazkhan" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors" aria-label="LinkedIn">
-            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <a href="https://www.linkedin.com/in/mrarbazkhan" target="_blank" rel="noopener"
+            class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors"
+            aria-label="LinkedIn">
+            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
           </a>
-          <a href="https://www.youtube.com/@ArbazyCode" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors" aria-label="YouTube">
-            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <a href="https://www.youtube.com/@ArbazyCode" target="_blank" rel="noopener"
+            class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:text-accent transition-colors"
+            aria-label="YouTube">
+            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
           </a>
         </div>
       </div>
 
       <!-- Col 2: Quick Links -->
       <div class="space-y-3">
-        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Quick Links</h4>
+        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Quick Links
+        </h4>
         <ul class="space-y-2 text-xs">
           <li><a href="index.html" class="hover:text-accent transition-colors">Home</a></li>
           <li><a href="about.html" class="hover:text-accent transition-colors">About Me</a></li>
@@ -2268,30 +2716,37 @@
 
       <!-- Col 3: Services -->
       <div class="space-y-3">
-        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Engineering Services</h4>
+        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Engineering
+          Services</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="index.html#services" class="hover:text-accent transition-colors">ERP &amp; Inventory Systems</a></li>
+          <li><a href="index.html#services" class="hover:text-accent transition-colors">ERP &amp; Inventory Systems</a>
+          </li>
           <li><a href="index.html#services" class="hover:text-accent transition-colors">Custom CRM Platforms</a></li>
           <li><a href="index.html#services" class="hover:text-accent transition-colors">SQL Query Optimization</a></li>
-          <li><a href="index.html#services" class="hover:text-accent transition-colors">OCR &amp; Document Extraction</a></li>
+          <li><a href="index.html#services" class="hover:text-accent transition-colors">OCR &amp; Document
+              Extraction</a></li>
           <li><a href="index.html#services" class="hover:text-accent transition-colors">Payment Integrations</a></li>
         </ul>
       </div>
 
       <!-- Col 4: Contact -->
       <div class="space-y-3">
-        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Direct Contact</h4>
+        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Direct Contact
+        </h4>
         <ul class="space-y-2 text-xs">
           <li class="text-zinc-500 dark:text-zinc-400">75230, Karachi, Pakistan</li>
-          <li><a href="mailto:arbaznadeem3130@gmail.com" class="text-accent hover:underline">arbaznadeem3130@gmail.com</a></li>
-          <li><a href="https://wa.me/923702361916" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">03702361916 (+92 370 2361916)</a></li>
+          <li><a href="mailto:arbaznadeem3130@gmail.com"
+              class="text-accent hover:underline">arbaznadeem3130@gmail.com</a></li>
+          <li><a href="https://wa.me/923702361916" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent transition-colors">03702361916 (+92 370 2361916)</a></li>
         </ul>
       </div>
 
     </div>
 
     <!-- Copyright Bar -->
-    <div class="max-w-6xl mx-auto px-6 pt-8 border-t border-zinc-200/60 dark:border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+    <div
+      class="max-w-6xl mx-auto px-6 pt-8 border-t border-zinc-200/60 dark:border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
       <p>© 2026 Arbaz Khan. All rights reserved.</p>
       <div class="flex gap-6">
         <a href="index.html" class="hover:text-accent">Privacy Policy</a>
