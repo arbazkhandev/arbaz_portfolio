@@ -243,18 +243,18 @@
     :class="sc ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5' : ''">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
 
-      <a href="index.html" class="font-display font-bold text-xl tracking-tight relative z-10">
+      <a href="/" class="font-display font-bold text-xl tracking-tight relative z-10">
         <span class="text-zinc-900 dark:text-white">arbaz</span><span class="text-accent">khan</span>
       </a>
 
       <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
-        <li><a href="index.html#services" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
-        <li><a href="index.html#workflow" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Process</a></li>
-        <li><a href="index.html#work" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
-        <li><a href="about.html" class="nl on !text-zinc-900 dark:!text-white font-medium">About</a></li>
-        <li><a href="index.html#reviews" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Reviews</a></li>
-        <li><a href="blog.html" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Blog</a></li>
-        <li><a href="index.html#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+        <li><a href="/#services" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
+        <li><a href="/#workflow" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Process</a></li>
+        <li><a href="/#work" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
+        <li><a href="about" class="nl on !text-zinc-900 dark:!text-white font-medium">About</a></li>
+        <li><a href="/#reviews" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Reviews</a></li>
+        <li><a href="blog" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Blog</a></li>
+        <li><a href="/#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
 
       <div class="flex items-center gap-3">
@@ -273,7 +273,7 @@
         </button>
 
         <!-- Hire Me CTA Matching Home -->
-        <a href="index.html#contact"
+        <a href="/#contact"
           class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
           Hire me
           <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -302,15 +302,15 @@
       x-transition:leave-end="opacity-0 -translate-y-2"
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
-        <li><a href="index.html#services" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Services</a></li>
-        <li><a href="index.html#workflow" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Process</a></li>
-        <li><a href="index.html#work" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
-        <li><a href="about.html" @click="mm=false" class="block text-accent font-semibold">About</a></li>
-        <li><a href="index.html#reviews" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Reviews</a></li>
-        <li><a href="blog.html" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Blog</a></li>
-        <li><a href="index.html#contact" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
+        <li><a href="/#services" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Services</a></li>
+        <li><a href="/#workflow" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Process</a></li>
+        <li><a href="/#work" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
+        <li><a href="about" @click="mm=false" class="block text-accent font-semibold">About</a></li>
+        <li><a href="/#reviews" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Reviews</a></li>
+        <li><a href="blog" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Blog</a></li>
+        <li><a href="/#contact" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
         <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
-          <a href="index.html#contact" @click="mm=false"
+          <a href="/#contact" @click="mm=false"
             class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hire me →</a>
         </li>
       </ul>
@@ -859,11 +859,11 @@
       <div class="space-y-3">
         <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Quick Links</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="index.html" class="hover:text-accent transition-colors">Home</a></li>
-          <li><a href="about.html" class="hover:text-accent transition-colors">About Me</a></li>
-          <li><a href="projects.html" class="hover:text-accent transition-colors">Work &amp; Portfolio</a></li>
-          <li><a href="blog.html" class="hover:text-accent transition-colors">Blog &amp; Articles</a></li>
-          <li><a href="index.html#contact" class="hover:text-accent transition-colors">Contact</a></li>
+          <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+          <li><a href="about" class="hover:text-accent transition-colors">About Me</a></li>
+          <li><a href="projects" class="hover:text-accent transition-colors">Work &amp; Portfolio</a></li>
+          <li><a href="blog" class="hover:text-accent transition-colors">Blog &amp; Articles</a></li>
+          <li><a href="/#contact" class="hover:text-accent transition-colors">Contact</a></li>
         </ul>
       </div>
 
@@ -871,11 +871,11 @@
       <div class="space-y-3">
         <h4 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-900 dark:text-white">Engineering Services</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="index.html#services" class="hover:text-accent transition-colors">ERP &amp; Inventory Systems</a></li>
-          <li><a href="index.html#services" class="hover:text-accent transition-colors">Custom CRM Platforms</a></li>
-          <li><a href="index.html#services" class="hover:text-accent transition-colors">SQL Query Optimization</a></li>
-          <li><a href="index.html#services" class="hover:text-accent transition-colors">OCR &amp; Document Extraction</a></li>
-          <li><a href="index.html#services" class="hover:text-accent transition-colors">Payment Integrations</a></li>
+          <li><a href="/#services" class="hover:text-accent transition-colors">ERP &amp; Inventory Systems</a></li>
+          <li><a href="/#services" class="hover:text-accent transition-colors">Custom CRM Platforms</a></li>
+          <li><a href="/#services" class="hover:text-accent transition-colors">SQL Query Optimization</a></li>
+          <li><a href="/#services" class="hover:text-accent transition-colors">OCR &amp; Document Extraction</a></li>
+          <li><a href="/#services" class="hover:text-accent transition-colors">Payment Integrations</a></li>
         </ul>
       </div>
 
